@@ -61,8 +61,6 @@ angular.module('starter.controllers', [])
     window.localStorage.setItem("spouseID",null);
     window.localStorage.setItem('Preference', false);
     window.localStorage.setItem('user_pic', null);
-
-    
     $scope.loggedIn = false;
     console.log($scope.loggedIn);
     //$scope.choice.email = "";
@@ -246,18 +244,22 @@ angular.module('starter.controllers', [])
       }
       console.log(dataSource);
       var config = {headers : {'Content-Type': 'application/x-www-form-urlencoded;'}}
-      console.log(JSON.stringify(data));
+      console.log(userdata);
       $http.post(dataSource,userdata).then(function(response){
-      console.log(JSON.stringify(response.data));
-      if(response.data.message != 'your email or password is incorrect'){
+      console.log(response.data);
+      if(response.data.message != 'your email or password is incorrect' && response.data.message != 'you mobile or password is incorrect' ){
         window.localStorage.setItem('loggedIn', true);
-        window.localStorage.setItem("userId",response.data.users[0].id);
-        window.localStorage.setItem("fname",response.data.users[0].fname);
-        window.localStorage.setItem("lname",response.data.users[0].lname);
-        window.localStorage.setItem("email",response.data.users[0].email);
-        window.localStorage.setItem("mobile",response.data.users[0].mobile);
-        window.localStorage.setItem("spouseID",response.data.users[0].spouseID);
-        window.localStorage.setItem("activePlan",response.data.plan);
+        if(typeof response.data.users != "undefined")
+        {
+          response.data.data = response.data.users[0];
+        }
+        window.localStorage.setItem("userId",response.data.data.id);
+        window.localStorage.setItem("fname",response.data.data.fname);
+        window.localStorage.setItem("lname",response.data.data.lname);
+        window.localStorage.setItem("email",response.data.data.email);
+        window.localStorage.setItem("mobile",response.data.data.mobile);
+        window.localStorage.setItem("spouseID",response.data.data.spouseID);
+        //window.localStorage.setItem("activePlan",response.data.plan);
         $state.go('app.home');
         $ionicLoading.hide();
         $ionicScrollDelegate.scrollTop(true);
@@ -705,10 +707,6 @@ angular.module('starter.controllers', [])
                         $ionicLoading.show({templates: response.data.message,duration: 3000});
                       }
                      }
-                   
-
-
-
               ///////////////////////////////////////////////////
                   
         })
