@@ -54,7 +54,7 @@ angular.module('starter.controllers', [])
     $ionicLoading.show({template:'Logged Out....',duration: 1500});
     window.localStorage.setItem('loggedIn', '');
     window.localStorage.setItem("userId",null);
-    window.localStorage.setItem("fname",null);
+    window.localStorage.setItem("fname","");
     window.localStorage.setItem("lname",null);
     window.localStorage.setItem("email",null);
     window.localStorage.setItem("mobile",null);
@@ -227,7 +227,7 @@ angular.module('starter.controllers', [])
          console.log('Tapped!', res);
       });  
   */
-  
+  var baseUrl = 'http://vps137395.vps.ovh.ca/baby3/public/app';
   $scope.loginData = {};
   $scope.RegisterData = {};
   $scope.ForgotData = {};
@@ -235,7 +235,19 @@ angular.module('starter.controllers', [])
     $ionicLoading.show({template:'Verifying...',duration: 1500});
     //console.log(JSON.stringify($scope.loginData));
     //$state.go('app.home');
-    UserService.login($scope.loginData).then(function(response){
+    ///////////////////////
+    
+      var dataSource = baseUrl +'/login';
+      var userdata = {
+        userid: $scope.loginData.username,
+        password: $scope.loginData.password,
+        lat: localStorage.lat,
+        lng: localStorage.lng
+      }
+      console.log(dataSource);
+      var config = {headers : {'Content-Type': 'application/x-www-form-urlencoded;'}}
+      console.log(JSON.stringify(data));
+      $http.post(dataSource,userdata).then(function(response){
       console.log(JSON.stringify(response.data));
       if(response.data.message != 'your email or password is incorrect'){
         window.localStorage.setItem('loggedIn', true);
@@ -1660,8 +1672,10 @@ setupSlider();
     $cordovaGeolocation
       .getCurrentPosition(posOptions)
       .then(function (position) {
-        var lat  = position.coords.latitude
-        var lng = position.coords.longitude
+        var lat  = position.coords.latitude;
+        var lng = position.coords.longitude;
+        localStorage.lat = lat;
+        localStorage.lng = lng;
         console.log('Lat : '+lat+', lng : '+lng);
         findAdd.getAdd(lat,lng).then(function(response){
           var res = response.data.results[0].address_components;
@@ -1853,17 +1867,16 @@ $scope.payment = function(plan_available, alphabet, gender, plan){
         $http.post("http://vps137395.vps.ovh.ca/baby3/public/app/payment_status",{
           txnid: localStorage.txnid
         }).success(function(data){
-          
             console.log(data.status);
-            
+            if(data.status == "Success")
+            {
               localStorage.pay_status = "success";
               $cordovaInAppBrowser.close();
               $ionicLoading.show({
                 template: '<span class="mono">Payment Successful</span>',
                 duration: 1500
               });
-  
-          
+            }
            })
        }, 3000);
     }

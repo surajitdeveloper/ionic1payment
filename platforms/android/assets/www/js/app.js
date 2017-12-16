@@ -6,7 +6,7 @@
 // 'starter.controllers' is found in controllers.js
 angular.module('starter', ['ionic', 'starter.controllers','starter.services', 'star-rating', "ionic.contrib.ui.tinderCards",'ionic-toast', 'ngCordova'])
 
-.run(function($ionicPlatform, DB, $rootScope, $ionicPopup, $state, $location, $filter, $locale, $ionicActionSheet) {
+.run(function($ionicPlatform, DB, $rootScope, $ionicPopup, $state, $location, $filter, $locale, $ionicActionSheet, $cordovaGeolocation) {
   $rootScope.baseUrl = 'http://vps137395.vps.ovh.ca/baby3/public/app';
   // $rootScope.originList = {};
   // $rootScope.meaningList = {};
@@ -15,6 +15,31 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.services', 's
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
     $rootScope.userDetails = {};
+    ///////////////////////////////////////////////////
+
+
+
+
+
+
+
+    ////////////////////////////////////////////////////////
+    localStorage.lat = 22;
+    localStorage.lng = 88;
+    var posOptions = {timeout: 10000, enableHighAccuracy: true};
+    $cordovaGeolocation
+    .watchPosition(posOptions)
+    .then(function (position) {
+      var lat  = position.coords.latitude;
+      var lng = position.coords.longitude;
+      localStorage.lat = lat;
+      localStorage.lng = lng;
+      console.log('Lat : '+lat+', lng : '+lng);
+    }, function(err) {
+      console.log(err);
+    });
+
+    /////////////////////////////////////////////////////////////
     $rootScope.isLoggedIn = false;
     if (window.cordova && window.cordova.plugins.Keyboard) {
       cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);

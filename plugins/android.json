@@ -13,7 +13,15 @@
     "cordova-plugin-device": {
       "PACKAGE_NAME": "com.uniquesikhbabynames.app"
     },
+    "cordova-plugin-facebook4": {
+      "APP_ID": "118733138820962",
+      "APP_NAME": "Unique Sikh Baby Names",
+      "PACKAGE_NAME": "com.uniquesikhbabynames.app"
+    },
     "cordova-plugin-geolocation": {
+      "PACKAGE_NAME": "com.uniquesikhbabynames.app"
+    },
+    "cordova-plugin-googleplus": {
       "PACKAGE_NAME": "com.uniquesikhbabynames.app"
     },
     "cordova-plugin-inappbrowser": {
@@ -35,14 +43,6 @@
       "PACKAGE_NAME": "com.uniquesikhbabynames.app"
     },
     "ionic-plugin-keyboard": {
-      "PACKAGE_NAME": "com.uniquesikhbabynames.app"
-    },
-    "cordova-plugin-googleplus": {
-      "PACKAGE_NAME": "com.uniquesikhbabynames.app"
-    },
-    "cordova-plugin-facebook4": {
-      "APP_ID": "118733138820962",
-      "APP_NAME": "Unique Sikh Baby Names",
       "PACKAGE_NAME": "com.uniquesikhbabynames.app"
     }
   },
