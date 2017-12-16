@@ -1847,23 +1847,26 @@ $scope.payment = function(plan_available, alphabet, gender, plan){
 
   $rootScope.$on('$cordovaInAppBrowser:loadstart', function(e, event){
     
-    $interval( function(){ 
-      $http.post("http://vps137395.vps.ovh.ca/baby3/public/app/payment_status",{
-        txnid: localStorage.txnid
-      }).success(function(data){
-        
-          console.log(data.status);
+    if(localStorage.pay_status == "pending")
+    {
+      $interval( function(){ 
+        $http.post("http://vps137395.vps.ovh.ca/baby3/public/app/payment_status",{
+          txnid: localStorage.txnid
+        }).success(function(data){
           
-            localStorage.pay_status = "success";
-            $cordovaInAppBrowser.close();
-            $ionicLoading.show({
-              template: '<span class="mono">Payment Successful</span>',
-              duration: 1500
-            });
-
-        
-         })
-     }, 3000);
+            console.log(data.status);
+            
+              localStorage.pay_status = "success";
+              $cordovaInAppBrowser.close();
+              $ionicLoading.show({
+                template: '<span class="mono">Payment Successful</span>',
+                duration: 1500
+              });
+  
+          
+           })
+       }, 3000);
+    }
       });
       $rootScope.$on('$cordovaInAppBrowser:loaderror', function(e, event){
         console.log("failure");
