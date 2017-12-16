@@ -1,0 +1,77 @@
+<ion-side-menus enable-menu-with-back-views="false" cache-view="false" ></ion-side-menus>
+<ion-view view-title="SignUp" hide-nav-bar="true" can-swipe-back="false" cache-view="false">
+ 
+  <ion-header-bar class="bar-royal bar bar-header" align-title="center">
+    <button onclick="window.history.back" class="button back-button buttons button-clear header-item">
+      <i class="icon ion-ios-arrow-back"></i> 
+      <span class="back-text" style="transform: translate3d(0px, 0px, 0px);"></span>
+    </button><div class="buttons buttons-left header-item" >
+      <span class="left-buttons">
+    <button class="button button-icon button-clear ion-navicon button-dark hide" menu-toggle="left">
+    </button>
+  </span></div><div class="title title-center header-item" style="transform: translate3d(0px, 0px, 0px); left: 31px; right: 31px;"><span class="nav-bar-title">
+    <a href="#/app/home">
+      <div class="button button-clear" id="hm-f">
+        Unique Sikh Baby Names
+      </div></a>
+  </span></div><div class="buttons buttons-right header-item"><span class="right-buttons">
+    <button class="button button-icon button-clear ion-android-more-vertical button-dark hide" menu-toggle="right">
+    </button>
+  </span>
+</div>
+</ion-header-bar>
+
+  <ion-content class="royal-bg login-page padding">
+    <!-- <div class="padding text-center">
+      <h1 ng-click="home()" class="baby_name">
+        Unique Sikh Baby Names
+      </h1>
+    </div> -->
+    <div class="padding text-center">
+      <h2 class="bablog_text">Sign Up</h2>
+    </div>
+    <form name="signup" ng-submit="doSignup()" novalidate>
+      <div class="list bablog_box">
+        <label class="item item-input custom-login">
+          <!--<span class="input-label energized">Mobile/Email</span>ng-if="!local"-->
+          <input type="email" ng-model="RegisterData.email" name="email" placeholder="Email Address" required>
+        </label>
+        <label class="item item-input custom-login">
+          <!--<span class="input-label energized">Mobile/Email</span>ng-if="!local"-->
+          <input type="tel" ng-model="RegisterData.mobile" placeholder="+91- Mobile Number" ng-maxlength="10" required>
+        </label>
+        <label class="item item-input custom-login">
+          <!--<span class="input-label energized">Password</span>-->
+          <input type="password" ng-model="RegisterData.password" name="password" placeholder="Password" ng-minlength="6" required>
+        </label>
+        <label class="item item-input custom-login">
+          <!--<span class="input-label energized">Password</span>-->
+          <input type="text" ng-model="RegisterData.referral" name="referral" placeholder="Referral Code" ng-maxlength="10">
+        </label>
+      </div>
+      <div class="row">
+        <div class="col text-center">
+          <button class="button button-outline button-dark button-font bbbtn" type="submit" ng-disabled="signup.$invalid">Submit</button>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col text-center">
+          <a class="dark dark_text" ng-click="goto('app.login')">Existing User. Click here to <span class="babsignup">Login</span></a>
+        </div>
+      </div>
+      <div class="clear-login"></div>
+      <div class="row">
+        <div class="col text-center">
+          <button class="button icon-left ion-social-facebook button-clear button-outline button-dark button-font bablog_btn cus-btn-fb" >Facebook</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col text-center">
+          <button class="button icon-left ion-social-google button-clear button-outline button-dark button-font bablog_btn cus-btn-goo" >Google</button>
+        </div>
+      </div>
+    </form>
+  </ion-content>
+</ion-view>
+</ion-side-menus>

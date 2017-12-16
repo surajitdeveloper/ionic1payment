@@ -1,0 +1,95 @@
+<ion-side-menus enable-menu-with-back-views="false" cache-view="false" >
+
+<ion-view view-title="Login" hide-nav-bar="true" can-swipe-back="false" cache-view="false"><!-- true, false, false  -->
+  <!--ion-view-->
+
+
+  <ion-header-bar class="bar-royal bar bar-header" align-title="center">
+    <button onclick="window.history.back" class="button back-button buttons button-clear header-item">
+      <i class="icon ion-ios-arrow-back"></i> 
+      <span class="back-text" style="transform: translate3d(0px, 0px, 0px);"></span>
+    </button><div class="buttons buttons-left header-item" >
+      <span class="left-buttons">
+    <button class="button button-icon button-clear ion-navicon button-dark hide" menu-toggle="left">
+    </button>
+  </span></div><div class="title title-center header-item" style="transform: translate3d(0px, 0px, 0px); left: 31px; right: 31px;"><span class="nav-bar-title">
+    <a href="#/home"><div class="button button-clear" id="hm-f">
+      Unique Sikh Baby Names
+    </div></a>
+  </span></div><div class="buttons buttons-right header-item"><span class="right-buttons">
+    <button class="button button-icon button-clear ion-android-more-vertical button-dark hide" menu-toggle="right">
+    </button>
+  </span>
+</div>
+</ion-header-bar>
+
+
+
+  <!--ion-side-menu-content drag-content="false">
+      <ion-nav-bar class="bar-royal" align-title="center">
+        <ion-nav-back-button></ion-nav-back-button>
+        
+        <ion-nav-title>
+          <div class="button button-clear" id="hm-f" ng-click="home()">
+            Unique Sikh Baby Names
+          </div>
+        </ion-nav-title>
+      </ion-nav-bar>
+    </ion-side-menu-content-->
+    
+    
+    <!-- header portion end here -->
+  <ion-content class="royal-bg login-page padding">
+    <!--h3><a class="item ion-ios-home" ng-click="home()"></a></h3>
+      
+    <div class="padding text-center">
+      <h1 ng-click="home()" class="baby_name">
+        Unique Sikh Baby Names
+      </h1>
+    </div-->
+    <div class="padding text-center">
+      <h2 class="bablog_text">Login</h2>
+    </div>
+    <form name="lForm" ng-submit="doLogin()" novalidate>
+      <div class="list bablog_box">
+        <label class="item item-input custom-login">
+          <!--<span class="input-label energized">Mobile/Email</span>-->
+          <input type="text" ng-model="loginData.username" placeholder="Mobile / Email" ng-pattern="/^(?:\d{10}|\w+@\w+\.\w{2,3})$/" required>
+        </label>
+        <label class="item item-input custom-login">
+          <!--<span class="input-label energized">Password</span>-->
+          <input type="password" ng-model="loginData.password" placeholder="Password" required>
+        </label>
+      </div>
+
+      <div class="row">
+        <div class="col  text-center">
+          <button class="button button-font button-block bbbtn" type="submit" ng-disabled="lForm.$invalid">Log in</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col text-right babreset">
+          <a ng-click="goto('app.forgot')">Reset/Forgot password</a>
+        </div>
+      </div>
+      <div class="clear-login"></div>
+      </form>
+      <div class="row">
+        <div class="col text-center">
+          <button class="button icon-left ion-social-facebook button-clear button-outline button-dark button-font bablog_btn cus-btn-fb" ng-click="facebookSignIn()" >Facebook</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col text-center">
+          <button class="button icon-left ion-social-google button-clear button-outline button-dark button-font bablog_btn cus-btn-goo g-signin2" data-onsuccess="onSignIn" ng-click="onSignIn()" >Google</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col text-center">
+          <a class="dark dark_text" ng-click="goto('app.signup')">New User. Click here to <span class="babsignup">SignUp</span></a>
+        </div>
+      </div>
+
+  </ion-content>
+</ion-view>
+</ion-side-menus>

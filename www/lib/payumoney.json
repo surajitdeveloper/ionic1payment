@@ -1,0 +1,2112 @@
+{
+	"swagger": "2.0",
+	"info": {
+		"description": "PayUMoney API Documentation",
+		"version": "1.0",
+		"title": "Payumoney API Documentation",
+		"termsOfService": "urn:tos",
+		"contact": {},
+		"license": {
+			"name": "Apache 2.0",
+			"url": "http://www.apache.org/licenses/LICENSE-2.0"
+		}
+	},
+	"host": "payumoney.com",
+	"basePath": "https",
+	"x-servers": [{
+		"url": "//www.payumoney.com",
+		"description": "Live Server"
+	}, {
+		"url": "//test.payumoney.com",
+		"description": "Sandbox Server"
+	}],
+	"tags": [{
+		"name": "Introduction",
+		"description": "This page list out all the APIs provided by payumoney for different use cases like payment refund, payment inquiry, check transaction status, create invoices or payment links etc.In order to call our APIs, you need to pass authentication in the form of merchant key and authorization header.\nValues for both merchant key and Authorization header are available on the Payumoney dashboard.\n\nEvery merchant has a unique authorization and will be used to authenticate our API, hence should not be shared with anyone.\nAll API requests must be made over HTTPS. Calls made over plain HTTP will fail.\n\nTo post successfully to the production server, your merchant application should be approved and you should have the merchant key provided by PayUmoney.\n\n ###  \u003cimg src=\"https://screenshot.click/01-50-7b210-rzih8.jpg\" alt=\"Postman\" style=\"width: 50px;\"/\u003e Postman Collection\n Postman is an application that simplifies sending HTTP requests. To test the PayUmoney APIs using Postman, simply click the button below and replace the sample variables indicated by `{{ }}` with your actual values and also replace the key \u0026 authorization header provided with the values available from your merchant panel.\n[![Run in Postman](https://run.pstmn.io/button.svg)](https://www.getpostman.com/collections/d107afef53bf46afd437)"
+	}, {
+		"name": "Payment Inquiry APIs",
+		"description": "Payumoney APIs to enquire regarding a transaction done through Payumoney."
+	}, {
+		"name": "Refund APIs",
+		"description": "Payumoney APIs to do or inquire about refunds."
+	}, {
+		"name": "Invoicing APIs",
+		"description": "Payumoney APIs to create,search and manage a payment link or an email/SMS Invoice."
+	}, {
+		"name": "Deprecated APIs",
+		"description": "These are meant only for the existing merchants who have already integrated these APIs.We have a new version for the same usecase already available."
+	}],
+	"paths": {
+		"/payment/op/getPaymentResponse": {
+			"post": {
+				"tags": ["Payment Inquiry APIs"],
+				"summary": "Get Payment Response",
+				"description": " This API can be used by the merchant to get the response details of the transaction(s) done using PayUmoney.",
+				"operationId": "getPaymentResponseUsingPOST",
+				"consumes": ["application/json"],
+				"produces": ["application/json"],
+				"parameters": [{
+					"name": "Authorization",
+					"in": "header",
+					"description": "Authorization Header available in the Payumoney dashboard.",
+					"required": true,
+					"type": "string"
+				}, {
+					"name": "Content-Type",
+					"in": "header",
+					"description": "",
+					"default": "application/json",
+					"required": false,
+					"type": "string"
+				}, {
+					"name": "merchantKey",
+					"in": "query",
+					"description": "Merchant Key available in the Payumoney dashboard",
+					"required": true,
+					"type": "string"
+				}, {
+					"name": "merchantTransactionIds",
+					"in": "query",
+					"description": "The Unique Ids of the transactions(passed by the merchant) for which a merchant want to get the payment response.(One merchant transaction Id Or Pipe separated merchantTransactionIds, Maximum 50 transaction Ids)",
+					"required": true,
+					"type": "string"
+				}, {
+					"name": "from",
+					"in": "query",
+					"description": "From date in (dd-mm-yyyy)",
+					"required": false,
+					"type": "string"
+				}, {
+					"name": "to",
+					"in": "query",
+					"description": "To date in (dd-mm-yyyy)",
+					"required": false,
+					"type": "string"
+				}, {
+					"name": "count",
+					"in": "query",
+					"description": "Number of payments to fetch",
+					"required": false,
+					"type": "integer",
+					"format": "int32"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/ResultDTO_getPaymentResponse"
+						}
+					},
+					"201": {
+						"description": "Created"
+					},
+					"401": {
+						"description": "Unauthorized"
+					},
+					"403": {
+						"description": "Forbidden"
+					},
+					"404": {
+						"description": "Not Found"
+					}
+				},
+				"x-code-samples": [{
+					"lang": "cURL",
+					"source": "curl -X POST 'https://test.payumoney.com/payment/op/getPaymentResponse?merchantKey=40747T\u0026merchantTransactionIds=396132-58876806' -H 'authorization: KpNTiy57L6OFjS2D3TqPod8+6nfGmRVwVMi5t9jR4NU=' -H 'cache-control: no-cache'"
+				}]
+			}
+		},
+		"/payment/payment/chkMerchantTxnStatus": {
+			"post": {
+				"tags": ["Payment Inquiry APIs"],
+				"summary": "Check Merchant Transaction Status",
+				"description": "This API can be used by a merchant to reconcile/get update status of the transaction(s) with PayUmoney.",
+				"operationId": "chkMerchantTxnStatusUsingPOST",
+				"consumes": ["application/json"],
+				"produces": ["application/json"],
+				"parameters": [{
+					"name": "Authorization",
+					"in": "header",
+					"description": "Authorization Header available in the Payumoney dashboard.",
+					"required": true,
+					"type": "string"
+				}, {
+					"name": "Content-Type",
+					"in": "header",
+					"description": "",
+					"default": "application/json",
+					"required": false,
+					"type": "string"
+				}, {
+					"name": "merchantKey",
+					"in": "query",
+					"description": "Merchant Key available in the Payumoney dashboard",
+					"required": true,
+					"type": "string"
+				}, {
+					"name": "merchantTransactionIds",
+					"in": "query",
+					"description": "Transaction Id of the transaction for which status needs to be checked, provided by the merchant (One merchant transaction Id Or Pipe separated merchantTransactionIds, Maximum 50 transaction ids per call)",
+					"required": true,
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/ResultDTO_chkMerchantTxnStatus"
+						}
+					},
+					"201": {
+						"description": "Created"
+					},
+					"401": {
+						"description": "Unauthorized"
+					},
+					"403": {
+						"description": "Forbidden"
+					},
+					"404": {
+						"description": "Not Found"
+					}
+				},
+				"x-code-samples": [{
+					"lang": "cURL",
+					"source": "curl -X POST 'https://test.payumoney.com/payment/payment/chkMerchantTxnStatus?merchantKey=40747T\u0026merchantTransactionIds=396132-58876806' -H 'authorization: KpNTiy57L6OFjS2D3TqPod8+6nfGmRVwVMi5t9jR4NU=' -H 'cache-control: no-cache'"
+				}]
+			}
+		},
+		"/payment/payment/addInvoiceMerchantAPI": {
+			"post": {
+				"tags": ["Deprecated APIs"],
+				"summary": "Add Invoice API",
+				"description": "This API can be used to send an email invoice or create a payment link",
+				"operationId": "addInvoiceMerchantAPIUsingPOST",
+				"consumes": ["application/json"],
+				"produces": ["application/json"],
+				"parameters": [{
+					"name": "Authorization",
+					"in": "header",
+					"description": "Authorization Header available in the Payumoney dashboard.",
+					"required": true,
+					"type": "string"
+				}, {
+					"name": "Content-Type",
+					"in": "header",
+					"description": "",
+					"default": "application/json",
+					"required": true,
+					"type": "string"
+				}, {
+					"name": "amount",
+					"in": "query",
+					"description": "Payment amount (Positive amount up to 2 decimal places)",
+					"required": true,
+					"type": "string"
+				}, {
+					"name": "transactionId",
+					"in": "query",
+					"description": "Transaction or order reference Id (numbers, alphabets, space and hyphen are allowed characters)",
+					"required": true,
+					"type": "string"
+				}, {
+					"name": "paymentDescription",
+					"in": "query",
+					"description": "A brief description for the customer to identify the payment (numbers, alphabet, space and hyphen are allowed)",
+					"required": true,
+					"type": "string"
+				}, {
+					"name": "customerName",
+					"in": "query",
+					"description": "Name of the customer (numbers, alphabet, space and hyphen are allowed)",
+					"required": true,
+					"type": "string"
+				}, {
+					"name": "customerEmail",
+					"in": "query",
+					"description": "Customer Email Id",
+					"required": true,
+					"type": "string"
+				}, {
+					"name": "customerPhone",
+					"in": "query",
+					"description": "Mobile number of the customer (just 10 digits of the mobile number)",
+					"required": true,
+					"type": "string"
+				}, {
+					"name": "expiryTime",
+					"in": "query",
+					"description": "Date when the link should be expired (yyyy-mm-dd format).Default 7 days",
+					"required": false,
+					"type": "string"
+				}, {
+					"name": "userId",
+					"in": "query",
+					"description": "Any user Identification if applicable",
+					"required": false,
+					"type": "string",
+					"default": "-1"
+				}, {
+					"name": "prevPaymentId",
+					"in": "query",
+					"description": "Previous PaymentId if applicable",
+					"required": false,
+					"type": "string"
+				}, {
+					"name": "sendEmail",
+					"in": "query",
+					"description": "Whether email should be sent by PayUmoney or not (false - PayUmoney will not send email to customer,true - PayUmoney will send the email to customer)",
+					"required": false,
+					"type": "boolean",
+					"default": false
+				}],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/ResultDTO_addInvoiceMerchantAPI"
+						}
+					},
+					"201": {
+						"description": "Created"
+					},
+					"401": {
+						"description": "Unauthorized"
+					},
+					"403": {
+						"description": "Forbidden"
+					},
+					"404": {
+						"description": "Not Found"
+					}
+				},
+				"x-code-samples": [{
+					"lang": "cURL",
+					"source": "curl -X POST 'https://test.payumoney.com/payment/payment/addInvoiceMerchantAPI?amount=50\u0026transactionId=ab121\u0026paymentDescription=toyPayment\u0026customerName=mahima\u0026customerEmail=suryansh.sabharwal%40payu.in\u0026customerPhone=7737371193' -H 'authorization: KpNTiy57L6OFjS2D3TqPod8+6nfGmRVwVMi5t9jR4NU=' -H 'cache-control: no-cache'"
+				}]
+			}
+		},
+		"/payment/payment/smsInvoice": {
+			"post": {
+				"tags": ["Deprecated APIs"],
+				"summary": "SMS Invoice API",
+				"description": "A Merchant can send an SMS invoice to a customer using this API",
+				"operationId": "smsInvoiceMerchantAPIUsingPOST",
+				"consumes": ["application/json"],
+				"produces": ["application/json"],
+				"parameters": [{
+					"name": "Authorization",
+					"in": "header",
+					"description": "Authorization Header available in the Payumoney dashboard.",
+					"required": true,
+					"type": "string"
+				}, {
+					"name": "Content-Type",
+					"in": "header",
+					"description": "",
+					"default": "application/json",
+					"required": true,
+					"type": "string"
+				}, {
+					"name": "customerName",
+					"in": "query",
+					"description": "Name of the customer (numbers, alphabet, space and hyphen are allowed)",
+					"required": true,
+					"type": "string"
+				}, {
+					"name": "customerMobileNumber",
+					"in": "query",
+					"description": "Mobile number of the customer (just 10 digits of the mobile number)",
+					"required": true,
+					"type": "string"
+				}, {
+					"name": "description",
+					"in": "query",
+					"description": "A brief description for the customer to identify the payment (numbers, alphabet, space and hyphen are allowed)",
+					"required": true,
+					"type": "string"
+				}, {
+					"name": "amount",
+					"in": "query",
+					"description": "Payment amount (Positive amount up to 2 decimal places)",
+					"required": true,
+					"type": "string"
+				}, {
+					"name": "invoiceReferenceId",
+					"in": "query",
+					"description": "Transaction or Order Reference Id (numbers, alphabet, space and hyphen are allowed)",
+					"required": false,
+					"type": "string"
+				}, {
+					"name": "expiryTime",
+					"in": "query",
+					"description": "Date when the link should be expired (yyyy-mm-dd format)",
+					"required": false,
+					"type": "string"
+				}, {
+					"name": "userId",
+					"in": "query",
+					"description": "Any user identifier if applicable",
+					"required": false,
+					"type": "string",
+					"default": "-1"
+				}, {
+					"name": "prevPaymentId",
+					"in": "query",
+					"description": "Previous Payment Id if applicable",
+					"required": false,
+					"type": "string"
+				}, {
+					"name": "confirmSMSPhone",
+					"in": "query",
+					"description": "Mobile Number for sending additional Confirmation SMS Notification (just 10 digits of the mobile number)",
+					"required": false,
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/ResultDTO_smsInvoiceMerchantAPI"
+						}
+					},
+					"201": {
+						"description": "Created"
+					},
+					"401": {
+						"description": "Unauthorized"
+					},
+					"403": {
+						"description": "Forbidden"
+					},
+					"404": {
+						"description": "Not Found"
+					}
+				},
+				"x-code-samples": [{
+					"lang": "cURL",
+					"source": "curl -X POST 'https://test.payumoney.com/payment/payment/smsInvoice?customerName=suryansh\u0026customerMobileNumber=6767676767\u0026description=toy\u0026amount=50' -H 'authorization: KpNTiy57L6OFjS2D3TqPod8+6nfGmRVwVMi5t9jR4NU=' -H 'cache-control: no-cache'"
+				}]
+			}
+		},
+		"/payment/op/v1/invoice": {
+			"post": {
+  				"tags": ["Invoicing APIs"],
+				"summary": "Create Single Invoice",
+        "description": "This API can be used to create invoice and send it to the customer.",
+				"operationId": "Create Single InvoiceUsingPOST",
+				"consumes": ["application/json"],
+				"produces": ["*/*"],
+				"parameters": [{
+					"name": "Authorization",
+					"in": "header",
+					"description": "Authorization Header available in the Payumoney dashboard.",
+					"required": true,
+					"type": "string"
+				},{
+					"in": "body",
+					"name": "singleInvoiceRequest",
+					"description": "",
+					"required": true,
+					"schema": {
+						"$ref": "#/definitions/SingleInvoicePaymentRequest"
+					}
+				}],
+				"responses": {
+					"404": {
+						"description": "Not Found"
+					},
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/SingleInvoicePaymentResponse"
+						}
+					},
+					"201": {
+						"description": "Created"
+					},
+					"401": {
+						"description": "Unauthorized"
+					},
+					"403": {
+						"description": "Forbidden"
+					}
+				},
+				"x-code-samples": [{
+					"lang": "cURL",
+					"source": "curl -X POST http://pp54.payumoney.com/payment/op/v1/invoice -H 'authorization: 1344022896' -H 'cache-control: no-cache' -H 'content-type: application/json' -H  -d '{ \"merchantId\" : \"4826524\", \"invoiceDescription\" : \" Sample description \", \"amount\" : { \"subAmount\" : 100.00 }, \"addedOn\":\"\", \"expiryDate\" : \"2017-06-23T11:38:00.000Z\", \"invoiceStatus\" : \"active\", \"maxPaymentsAllowed\" : \"\", \"userDetails\" : { \"name\" : \"pramod\", \"phone_number\" : \"8010280579\" , \"alternate_number\" : \"6010280579\", \"email\" : \"pramod.singh@payu.in\" }, \"source\" : \"payumoney_invoice\", \"signature\" : \"CD8E5479AD12F753D937C7CE02AAA142\", \"channel\" : { \"viaSms\":0, \"viaEmail\" :1 } }"
+				}]
+			}
+		},
+		"/payment/op/v1/invoices/search": {
+			"post": {
+				"tags": ["Invoicing APIs"],
+				"summary": "Search Invoices",
+				"consumes": ["application/json"],
+				"produces": ["application/json"],
+				"parameters": [{
+					"name": "Authorization",
+					"in": "header",
+					"description": "Authorization Header available in the Payumoney dashboard.",
+					"required": true,
+					"type": "string"
+				}, {
+					"in": "body",
+					"name": "invoiceSearchRequest",
+					"description": "",
+					"required": true,
+					"schema": {
+						"$ref": "#/definitions/InvoiceSearchRequest"
+					}
+				}],
+				"responses": {
+					"404": {
+						"description": "Not Found"
+					},
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/InvoiceSearchResponseDTO"
+						}
+					},
+					"201": {
+						"description": "Created"
+					},
+					"401": {
+						"description": "Unauthorized"
+					},
+					"403": {
+						"description": "Forbidden"
+					}
+				},
+				"x-code-samples": [{
+					"lang": "cURL",
+					"source": "curl -X POST http://pp54.payumoney.com/payment/op/v1/invoices/search  -H 'authorization: 1344022896' -H 'cache-control: no-cache' -H 'content-type: application/json' -H  -d '{ \"from\" : \"2017-05-01T12:30:00.000Z\", \"to\" : \"2017-05-01T13:00:00.000Z\", \"status\" : \" ACTIVE\", \"invoiceCode\":\"manan1234\", \"invoiceDescription\":\"sample\", \"amount\":\"2.00\", \"tinyUrl\":\"http://localhost:8081/invoice/146/INV51181433170509\", \"source\" :\"API_INT_INVOICE\" }'"
+				}]
+			}
+		},
+		"/payment/op/v1/invoices/{invoiceNumber}": {
+			"put": {
+				"tags": ["Invoicing APIs"],
+				"summary": "Manage Invoices",
+        "description": "This API can be used to edit an invoice status.",
+				"operationId": "Manage InvoicesControllerUsingPUT",
+				"consumes": ["application/json"],
+				"produces": ["*/*"],
+				"parameters": [{
+					"name": "Authorization",
+					"in": "header",
+					"description": "Authorization Header available in the Payumoney dashboard.",
+					"required": true,
+					"type": "string"
+				}, {
+					"name": "invoiceNumber",
+					"in": "path",
+					"description": " Invoice number generated in Create Single Invoice API or passed by merchant",
+					"required": true,
+					"type": "string"
+				}, {
+					"in": "body",
+					"name": "requestBody",
+					"description": "",
+					"required": true,
+					"schema": {
+						"type": "object",
+						"properties": {
+							"status": {
+								"type": "string",
+								"description": "Status which merchant needs to update on existing Invoice. It can be ACTIVE/INACTIVE/EXPIRED",
+								"example": "ACTIVE"
+							}
+						}
+					}
+				}],
+				"responses": {
+					"404": {
+						"description": "Not Found"
+					},
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/ManageInvoiceResponse"
+						}
+					},
+					"201": {
+						"description": "Created"
+					},
+					"401": {
+						"description": "Unauthorized"
+					},
+					"403": {
+						"description": "Forbidden"
+					}
+				},
+				"x-code-samples": [{
+					"lang": "cURL",
+					"source": "curl -X PUT https://www.payumoney.com/payment/op/v1/invoices/{invoiceNumber} -H 'authorization: 32715d3b-13c7-4b19-a1d6-19965b1a9f87' -H 'cache-control: no-cache' -H 'content-type: application/json' -H  -d '{ \"status\": \"ACTIVE\" }'"
+				}]
+			}
+		},
+		"/treasury/merchant/refundPayment": {
+			"post": {
+				"tags": ["Refund APIs"],
+				"summary": "Refund Payment API",
+				"description": "This API can be used by the merchant to initiate a partial or full refund for any successful transaction.",
+				"operationId": "refundPaymentUsingPOST",
+				"consumes": ["application/json"],
+				"produces": ["application/json"],
+				"parameters": [{
+					"name": "Authorization",
+					"in": "header",
+					"description": "Authorization Header available in the Payumoney dashboard.",
+					"required": true,
+					"type": "string"
+				}, {
+					"name": "Content-Type",
+					"in": "header",
+					"description": "",
+					"default": "application/json",
+					"required": true,
+					"type": "string"
+				}, {
+					"name": "merchantKey",
+					"in": "query",
+					"description": "Merchant Key available in the Payumoney dashboard",
+					"required": false,
+					"type": "string"
+				}, {
+					"name": "paymentId",
+					"in": "query",
+					"description": "paymentId",
+					"required": true,
+					"type": "integer",
+					"format": "int32"
+				}, {
+					"name": "refundAmount",
+					"in": "query",
+					"description": "refundAmount",
+					"required": true,
+					"type": "number",
+					"format": "double"
+				}, {
+					"name": "refundToSource",
+					"in": "query",
+					"description": "refundToSource",
+					"required": false,
+					"type": "integer",
+					"format": "int32"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/ResultDTO1_refundPayment"
+						}
+					},
+					"201": {
+						"description": "Created"
+					},
+					"401": {
+						"description": "Unauthorized"
+					},
+					"403": {
+						"description": "Forbidden"
+					},
+					"404": {
+						"description": "Not Found"
+					}
+				},
+				"x-code-samples": [{
+					"lang": "cURL",
+					"source": "curl -X POST 'https://test.payumoney.com/treasury/merchant/refundPayment?paymentId=58872009\u0026refundAmount=20' -H 'authorization: KpNTiy57L6OFjS2D3TqPod8+6nfGmRVwVMi5t9jR4NU=' -H 'cache-control: no-cache'"
+				}]
+			}
+		},
+		"/treasury/ext/merchant/getRefundDetails": {
+			"get": {
+				"tags": ["Refund APIs"],
+				"summary": " Get Refund Details by Refund Id",
+				"description": "This API returns all the refund details of a particular refund done using the Refund API or the Payumoney panel.",
+				"operationId": "RefundDetailsUsingGET",
+				"consumes": ["application/json"],
+				"produces": ["application/json"],
+				"parameters": [{
+					"name": "Authorization",
+					"in": "header",
+					"description": "Authorization Header available in the Payumoney dashboard.",
+					"required": true,
+					"type": "string"
+				}, {
+					"name": "Content-Type",
+					"in": "header",
+					"description": "",
+					"default": "application/json",
+					"required": true,
+					"type": "string"
+				}, {
+					"name": "merchantKey",
+					"in": "query",
+					"description": "Merchant Key available in the Payumoney dashboard",
+					"required": true,
+					"type": "string"
+				}, {
+					"name": "refundId",
+					"in": "query",
+					"description": "refundId",
+					"required": true,
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/ResultDTO1_RefundDetails"
+						}
+					},
+					"401": {
+						"description": "Unauthorized"
+					},
+					"403": {
+						"description": "Forbidden"
+					},
+					"404": {
+						"description": "Not Found"
+					}
+				},
+				"x-code-samples": [{
+					"lang": "cURL",
+					"source": "curl -X GET 'https://test.payumoney.com/treasury/ext/merchant/getRefundDetails?merchantKey=40747T\u0026refundId=190783' -H 'authorization: KpNTiy57L6OFjS2D3TqPod8+6nfGmRVwVMi5t9jR4NU=' -H 'cache-control: no-cache'"
+				}]
+			}
+		},
+		"/treasury/ext/merchant/getRefundDetailsByPayment": {
+			"get": {
+				"tags": ["Refund APIs"],
+				"summary": "Get Refund Details by Payment Id",
+				"description": "This API returns details of all refunds for a payment done through Payumoney.",
+				"operationId": "RefundDetailsByPaymentUsingGET",
+				"consumes": ["application/json"],
+				"produces": ["application/json"],
+				"parameters": [{
+					"name": "Authorization",
+					"in": "header",
+					"description": "Authorization Header available in the Payumoney dashboard.",
+					"required": true,
+					"type": "string"
+				}, {
+					"name": "Content-Type",
+					"in": "header",
+					"description": "",
+					"default": "application/json",
+					"required": true,
+					"type": "string"
+				}, {
+					"name": "merchantKey",
+					"in": "query",
+					"description": "merchantKey",
+					"required": true,
+					"type": "string"
+				}, {
+					"name": "paymentId",
+					"in": "query",
+					"description": "paymentId",
+					"required": true,
+					"type": "string"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/ResultDTO1_RefundDetailsByPayment"
+						}
+					},
+					"401": {
+						"description": "Unauthorized"
+					},
+					"403": {
+						"description": "Forbidden"
+					},
+					"404": {
+						"description": "Not Found"
+					}
+				},
+				"x-code-samples": [{
+					"lang": "cURL",
+					"source": "curl -X GET 'https://test.payumoney.com/treasury/ext/merchant/getRefundDetailsByPayment?merchantKey=40747T\u0026paymentId=58876807' -H 'authorization: KpNTiy57L6OFjS2D3TqPod8+6nfGmRVwVMi5t9jR4NU=' -H 'cache-control: no-cache'"
+				}]
+			}
+		},
+		"/payment/op/v1/invoices/GenerateSignature": {
+			"post": {
+				"tags": ["Invoicing APIs"],
+				"summary": "Generate Signature",
+        "description": "This API can be used to generate a signature that needs to get passed as a request parameter in the Create Single Invoice API.",
+				"operationId": "Generate SignatureUsingPOST",
+				"consumes": ["application/json"],
+				"produces": ["*/*"],
+				"parameters": [{
+					"name": "Authorization",
+					"in": "header",
+					"description": "Authorization Header available in the Payumoney dashboard.",
+					"required": true,
+					"type": "string"
+				}, {
+					"name": "discount",
+					"in": "query",
+					"description": "Discount amount which will be levied upto two decimal places",
+					"example": "10.00",
+					"required": false,
+					"type": "string"
+				}, {
+					"name": "tax",
+					"in": "query",
+					"description": "Tax which will be charged upto two decimal places",
+					"example": "10.00",
+					"required": false,
+					"type": "string"
+				}, {
+					"name": "shippingCharge",
+					"in": "query",
+					"description": "Shipping Charge which will be charged upto two decimal places",
+					"example": "1.00",
+					"required": false,
+					"type": "string"
+				}, {
+					"name": "subAmount",
+					"in": "query",
+					"description": "Amount which will be charged upto two decimal places",
+					"example": "20.00",
+					"required": true,
+					"type": "string"
+				}, {
+					"name": "currency",
+					"in": "query",
+					"description": "Currency of the amount for which invoice is to be generated (Default : INR)",
+					"example": "INR",
+					"required": false,
+					"type": "string"
+				}, {
+					"name": "salt",
+					"in": "query",
+					"description": "Salt available in Payumoney Dashboard",
+					"example": "12djfdj345n",
+					"required": true,
+					"type": "string"
+				}],
+				"responses": {
+					"404": {
+						"description": "Not Found"
+					},
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/GenerateSignatureResponseDTO"
+						}
+					},
+					"201": {
+						"description": "Created"
+					},
+					"401": {
+						"description": "Unauthorized"
+					},
+					"403": {
+						"description": "Forbidden"
+					}
+				},
+				"x-code-samples": [{
+					"lang": "cURL",
+					"source": "curl -X POST 'https://test.payumoney.com/payment/op/v1/invoices/GenerateSignature?merchantId=4927640\u0026discount=2.00\u0026tax=2.00\u0026shippingCharge=2.00\u0026subAmount=100.00\u0026currency=INR\u0026salt=AWBtTtmw' -H 'authorization: KpNTiy57L6OFjS2D3TqPod8+6nfGmRVwVMi5t9jR4NU=' -H 'cache-control: no-cache'"
+				}]
+			}
+		}
+	},
+	"definitions": {
+		"ResultDTO": {
+			"type": "object",
+			"properties": {
+				"errorCode": {
+					"type": "integer",
+					"format": "int32",
+					"description": ""
+				},
+				"message": {
+					"type": "string",
+					"description": ""
+				},
+				"responseCode": {
+					"type": "string",
+					"description": ""
+				},
+				"result": {
+					"type": "object",
+					"items": {
+						"$ref": "#/definitions/result1"
+					}
+				},
+				"status": {
+					"type": "integer",
+					"format": "int32"
+				}
+			}
+		},
+		"ResultDTO1": {
+			"type": "object",
+			"properties": {
+				"errorCode": {
+					"type": "string"
+				},
+				"guid": {
+					"type": "string"
+				},
+				"message": {
+					"type": "string"
+				},
+				"result": {
+					"type": "object"
+				},
+				"rows": {
+					"type": "integer",
+					"format": "int32"
+				},
+				"sessionId": {
+					"type": "string"
+				},
+				"status": {
+					"type": "integer",
+					"format": "int32"
+				}
+			}
+		},
+		"ResultDTO1_refundPayment": {
+			"type": "object",
+			"properties": {
+				"errorCode": {
+					"type": "string",
+					"description": "Error Code,if applicable",
+					"example": ""
+				},
+				"guid": {
+					"type": "string",
+					"description": "",
+					"example": ""
+				},
+				"message": {
+					"type": "string",
+					"description": "Response Status Message",
+					"example": "Refund Initiated"
+				},
+				"result": {
+					"type": "string",
+					"description": "Refund Id",
+					"example": "190651"
+				},
+				"rows": {
+					"type": "integer",
+					"format": "int32",
+					"description": "",
+					"example": "0"
+				},
+				"sessionId": {
+					"type": "string",
+					"description": "",
+					"example": ""
+				},
+				"status": {
+					"type": "integer",
+					"format": "int32",
+					"description": "",
+					"example": "0"
+				}
+			}
+		},
+		"ResultDTO1_RefundDetails": {
+			"type": "object",
+			"properties": {
+				"errorCode": {
+					"type": "string",
+					"description": "Error Code returned by Payumoney,if applicable",
+					"example": ""
+				},
+				"guid": {
+					"type": "string",
+					"description": "",
+					"example": ""
+				},
+				"message": {
+					"type": "string",
+					"description": "Response Message",
+					"example": "Refund Details :"
+				},
+				"result": {
+					"type": "object",
+					"properties": {
+						"PaymentId": {
+							"type": "string",
+							"description": "The id of the sale transaction which is being refunded",
+							"example": "58876807"
+						},
+						"Refund Amount": {
+							"type": "string",
+							"description": "Amount being refunded",
+							"example": "1.0"
+						},
+						"Refund Completed On": {
+							"type": "string",
+							"description": "Refund processing time if already processed",
+							"example": "null"
+						},
+						"Refund Created On": {
+							"type": "string",
+							"description": "Timestamp when refund request was raised",
+							"example": "2017-04-26 15:59:51.0"
+						},
+						"Refund Status": {
+							"type": "string",
+							"description": "Status of the Refund being checked",
+							"example": "refundinprogress"
+						},
+						"RefundId": {
+							"type": "string",
+							"description": "Refund Id passed in the request,returned after initiating a refund.",
+							"example": "190783"
+						},
+						"Total Amount": {
+							"type": "string",
+							"description": "The Sale transaction amount.",
+							"example": "1.06"
+						}
+					}
+				},
+				"rows": {
+					"type": "integer",
+					"format": "int32",
+					"description": "",
+					"example": "0"
+				},
+				"sessionId": {
+					"type": "string",
+					"description": "",
+					"example": ""
+				},
+				"status": {
+					"type": "integer",
+					"format": "int32",
+					"description": "",
+					"example": "0"
+				}
+			}
+		},
+		"ResultDTO1_RefundDetailsByPayment": {
+			"type": "object",
+			"properties": {
+				"errorCode": {
+					"type": "string",
+					"description": "Error Code returned by Payumoney,if applicable",
+					"example": ""
+				},
+				"guid": {
+					"type": "string",
+					"description": "",
+					"example": ""
+				},
+				"message": {
+					"type": "string",
+					"description": "",
+					"example": "Refund Details :"
+				},
+				"result": {
+					"type": "object",
+					"properties": {
+						"PaymentId": {
+							"type": "string",
+							"description": "Payment Id passed in the request",
+							"example": "58876807"
+						},
+						"Amount Left": {
+							"type": "string",
+							"description": "Amount remaining with merchant after refund",
+							"example": "1266.0"
+						},
+						"Refund Details Map": {
+							"type": "string",
+							"description": "Refund request details",
+							"example": "[{RefundId=190783, Refund Amount=10.0, Refund Completed On=null, Refund Status=refundinprogress, Refund Created On=2017-04-26 15:59:51.0}]"
+						},
+						"Total Amount": {
+							"type": "string",
+							"description": "The total sale transaction amount",
+							"example": "1276.0"
+						}
+					}
+				},
+				"rows": {
+					"type": "integer",
+					"format": "int32",
+					"description": "",
+					"example": "0"
+				},
+				"sessionId": {
+					"type": "string",
+					"description": "",
+					"example": ""
+				},
+				"status": {
+					"type": "integer",
+					"format": "int32",
+					"description": "",
+					"example": "0"
+				}
+			}
+		},
+		"result1": {
+			"type": "object",
+			"properties": {
+				"amount": {
+					"type": "integer"
+				},
+				"merchantTransactionId": {
+					"type": "string"
+				},
+				"paymentId": {
+					"type": "integer"
+				},
+				"status": {
+					"type": "string"
+				}
+			}
+		},
+		"ResultDTO_chkMerchantTxnStatus": {
+			"type": "object",
+			"properties": {
+				"errorCode": {
+					"type": "integer",
+					"format": "int32",
+					"description": "",
+					"example": ""
+				},
+				"message": {
+					"type": "string",
+					"description": "The response message",
+					"example": "All txnIds are valid"
+				},
+				"responseCode": {
+					"type": "string",
+					"description": "",
+					"example": ""
+				},
+				"result": {
+					"type": "object",
+					"properties": {
+						"amount": {
+							"type": "integer",
+							"description": "The transaction amount.",
+							"example": "106.1"
+						},
+						"merchantTransactionId": {
+							"type": "string",
+							"description": "The Unique transaction Id passed my merchant in the payment request.",
+							"example": "396132-58876806"
+						},
+						"paymentId": {
+							"type": "integer",
+							"description": "The Payumoney generated Payment Id.",
+							"example": "58876806"
+						},
+						"status": {
+							"type": "string",
+							"description": "The status of the payment transaction passed in the request",
+							"example": "Money with Payumoney"
+						}
+					}
+				},
+				"status": {
+					"type": "integer",
+					"format": "int32",
+					"description": "The API response status.",
+					"example": "0"
+				}
+			}
+		},
+		"ResultDTO_addInvoiceMerchantAPI": {
+			"type": "object",
+			"properties": {
+				"errorCode": {
+					"type": "integer",
+					"format": "int32",
+					"description": ""
+				},
+				"message": {
+					"type": "string",
+					"description": ""
+				},
+				"responseCode": {
+					"type": "string",
+					"description": ""
+				},
+				"result": {
+					"type": "object",
+					"properties": {
+						"amount": {
+							"type": "string",
+							"description": ""
+						},
+						"customerEmail": {
+							"type": "string",
+							"description": ""
+						},
+						"customerName": {
+							"type": "string",
+							"description": ""
+						},
+						"emailSent": {
+							"type": "boolean",
+							"description": ""
+						},
+						"paymentId": {
+							"type": "string",
+							"description": ""
+						},
+						"paymentURL": {
+							"type": "string",
+							"description": ""
+						},
+						"transactionId": {
+							"type": "string",
+							"description": ""
+						}
+					}
+				},
+				"status": {
+					"type": "integer",
+					"format": "int32",
+					"description": ""
+				}
+			}
+		},
+		"ResultDTO_smsInvoiceMerchantAPI": {
+			"type": "object",
+			"properties": {
+				"errorCode": {
+					"type": "integer",
+					"format": "int32",
+					"description": ""
+				},
+				"message": {
+					"type": "string",
+					"description": ""
+				},
+				"responseCode": {
+					"type": "string",
+					"description": ""
+				},
+				"result": {
+					"type": "object",
+					"properties": {
+						"amount": {
+							"type": "integer",
+							"description": ""
+						},
+						"customerMobileNumber": {
+							"type": "string",
+							"description": ""
+						},
+						"customerName": {
+							"type": "string",
+							"description": ""
+						},
+						"merchantTransactionId": {
+							"type": "string",
+							"description": ""
+						},
+						"paymentId": {
+							"type": "integer",
+							"description": ""
+						},
+						"url": {
+							"type": "string",
+							"description": ""
+						}
+					}
+				},
+				"status": {
+					"type": "integer",
+					"format": "int32",
+					"description": ""
+				}
+			}
+		},
+		"ResultDTO_getPaymentResponse": {
+			"type": "object",
+			"properties": {
+				"errorCode": {
+					"type": "integer",
+					"format": "int32",
+					"description": "Error Code,if applicable",
+					"example": ""
+				},
+				"message": {
+					"type": "string",
+					"description": "",
+					"example": "All txnIds are valid"
+				},
+				"responseCode": {
+					"type": "string",
+					"description": "API response code",
+					"example": ""
+				},
+				"result": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"merchantTransactionId": {
+								"type": "string",
+								"description": "The unique transaction id passed by the merchant",
+								"example": "396132-58876806"
+							},
+							"postBackParam": {
+								"description": "The parameters posted back in the response for a particular transaction",
+								"properties": {
+									"addedon": {
+										"type": "string",
+										"description": "The Timestamp when a transaction is done.",
+										"example": "2017-04-26 15:22:05"
+									},
+									"additionalCharges": {
+										"type": "string",
+										"description": "The value of surcharge/convinience fee charged in the transaction.",
+										"example": "6.1"
+									},
+									"additional_param": {
+										"type": "string",
+										"description": "",
+										"example": ""
+									},
+									"address1": {
+										"type": "string",
+										"description": "",
+										"example": ""
+									},
+									"address2": {
+										"type": "string",
+										"description": "",
+										"example": ""
+									},
+									"amount": {
+										"type": "string",
+										"description": "The transsaction amount.",
+										"example": "100.0"
+									},
+									"amount_split": {
+										"type": "string",
+										"description": "The transaction amount split between wallet \u0026 other payment mode in a payumoney transaction.",
+										"example": "{\"PAYU\":\"106.1\"}"
+									},
+									"bank_ref_num": {
+										"type": "string",
+										"description": "",
+										"example": "1182885976"
+									},
+									"bankcode": {
+										"type": "string",
+										"description": "The payumoney code number of issuing bank involved in the transaction.",
+										"example": "MAST"
+									},
+									"calledStatus": {
+										"type": "boolean",
+										"description": "",
+										"example": "false"
+									},
+									"cardToken": {
+										"type": "string",
+										"description": "",
+										"example": ""
+									},
+									"card_merchant_param": {
+										"type": "null",
+										"description": "",
+										"example": ""
+									},
+									"card_type": {
+										"type": "string",
+										"description": "",
+										"example": ""
+									},
+									"cardhash": {
+										"type": "string",
+										"description": "This field is no longer supported in postback params.",
+										"example": "This field is no longer supported in postback params."
+									},
+									"cardnum": {
+										"type": "string",
+										"description": "The masked card number.",
+										"example": "500446XXXXXX0000"
+									},
+									"city": {
+										"type": "string",
+										"description": "",
+										"example": ""
+									},
+									"country": {
+										"type": "string",
+										"description": "",
+										"example": ""
+									},
+									"createdOn": {
+										"type": "integer",
+										"description": "Epoch time(Unix time) when transaction is done.",
+										"example": "1493200111000"
+									},
+									"discount": {
+										"type": "string",
+										"description": "Discount, if applicable in a transaction.",
+										"example": "0.00"
+									},
+									"email": {
+										"type": "string",
+										"description": "The email id of the payer.",
+										"example": "test@email.com"
+									},
+									"encryptedPaymentId": {
+										"type": "null",
+										"description": "",
+										"example": ""
+									},
+									"error": {
+										"type": "string",
+										"description": "The error code associated with the transaction.",
+										"example": "E000"
+									},
+									"error_Message": {
+										"type": "string",
+										"description": "The error code associated with the transaction.",
+										"example": "No Error"
+									},
+									"fetchAPI": {
+										"type": "null",
+										"description": "",
+										"example": ""
+									},
+									"field1": {
+										"type": "string",
+										"description": "",
+										"example": ""
+									},
+									"field2": {
+										"type": "string",
+										"description": "",
+										"example": ""
+									},
+									"field3": {
+										"type": "string",
+										"description": "",
+										"example": ""
+									},
+									"field4": {
+										"type": "string",
+										"description": "",
+										"example": ""
+									},
+									"field5": {
+										"type": "string",
+										"description": "",
+										"example": ""
+									},
+									"field6": {
+										"type": "string",
+										"description": "",
+										"example": ""
+									},
+									"field7": {
+										"type": "string",
+										"description": "",
+										"example": ""
+									},
+									"field8": {
+										"type": "string",
+										"description": "",
+										"example": ""
+									},
+									"field9": {
+										"type": "string",
+										"description": "",
+										"example": ""
+									},
+									"firstname": {
+										"type": "string",
+										"description": "The firstname of the customer collected at the time of payment.",
+										"example": "Tom Jude"
+									},
+									"hash": {
+										"type": "string",
+										"description": "The response hash to be validated by merchant to ensure the response has not been tampered.",
+										"example": "9a5e632d332c11eb74f8a76ba3dcccd0548f1f26a73bc2541f85198a3cf0eb948ad8caff6b0921ae9a11aa7648c70f0a87ac29d09790ba2f1c31d48823ba9a85"
+									},
+									"key": {
+										"type": "string",
+										"description": "The merchant key available from Payumoney dashboar.",
+										"example": "40747T"
+									},
+									"lastname": {
+										"type": "string",
+										"description": "",
+										"example": ""
+									},
+									"meCode": {
+										"type": "string",
+										"description": "",
+										"example": "{\"tranportalid\":\"90000970\",\"pg_alias\":\"90000970\",\"pg_name\":\"hdfctraveltesting\",\"tranportalpwd\":\"password\"}"
+									},
+									"mihpayid": {
+										"type": "string",
+										"description": "",
+										"example": "70000000688113"
+									},
+									"mode": {
+										"type": "string",
+										"description": "Payment Mode in: \n- Netbanking (NB)\n- Debit Card(DC) \n- Credit Card(CC)\n- Wallet (WALLET).",
+										"example": "DC"
+									},
+									"name_on_card": {
+										"type": "string",
+										"description": "The card holder name",
+										"example": "Tom"
+									},
+									"net_amount_debit": {
+										"type": "string",
+										"description": "",
+										"example": "106.1"
+									},
+									"offer_availed": {
+										"type": "string",
+										"description": "",
+										"example": ""
+									},
+									"offer_failure_reason": {
+										"type": "string",
+										"description": "",
+										"example": ""
+									},
+									"offer_key": {
+										"type": "string",
+										"description": "",
+										"example": ""
+									},
+									"offer_type": {
+										"type": "string",
+										"description": "",
+										"example": ""
+									},
+									"paisa_mecode": {
+										"type": "string",
+										"description": "",
+										"example": ""
+									},
+									"paymentId": {
+										"type": "integer",
+										"description": "The PayU generated Payment Id",
+										"example": "58876806"
+									},
+									"payuMoneyId": {
+										"type": "string",
+										"description": "The Payumoney generated Payment Id.Same as paymentId",
+										"example": "58876806"
+									},
+									"pg_TYPE": {
+										"type": "string",
+										"description": "The payment gateway used to process the payment.",
+										"example": "HDFCPG"
+									},
+									"pg_ref_no": {
+										"type": "string",
+										"description": "",
+										"example": ""
+									},
+									"phone": {
+										"type": "string",
+										"description": "The phone number of the payer.",
+										"example": "6121212232"
+									},
+									"postBackParamId": {
+										"type": "integer",
+										"description": "",
+										"example": "39803778"
+									},
+									"postUrl": {
+										"type": "string",
+										"description": "The actual URL where response is posted in SURL/FURL",
+										"example": "https://test.payumoney.com/customer/dashboard/#/payment/notification/success"
+									},
+									"productinfo": {
+										"type": "string",
+										"description": "The product description passed in the payment request.",
+										"example": "productInfo"
+									},
+									"state": {
+										"type": "string",
+										"description": "",
+										"example": ""
+									},
+									"status": {
+										"type": "string",
+										"description": "The transaction status",
+										"example": "sucess"
+									},
+									"txnid": {
+										"type": "string",
+										"description": "The unique merchant transaction id passed in the payment request",
+										"example": "396132-58876806"
+									},
+									"udf1": {
+										"type": "string",
+										"description": "",
+										"example": ""
+									},
+									"udf10": {
+										"type": "string",
+										"description": "User Defined Field",
+										"example": ""
+									},
+									"udf2": {
+										"type": "string",
+										"description": "User Defined Field",
+										"example": ""
+									},
+									"udf3": {
+										"type": "string",
+										"description": "User Defined Field",
+										"example": ""
+									},
+									"udf4": {
+										"type": "string",
+										"description": "User Defined Field",
+										"example": ""
+									},
+									"udf5": {
+										"type": "string",
+										"description": "User Defined Field",
+										"example": ""
+									},
+									"udf6": {
+										"type": "string",
+										"description": "User Defined Field",
+										"example": ""
+									},
+									"udf7": {
+										"type": "string",
+										"description": "User Defined Field",
+										"example": ""
+									},
+									"udf8": {
+										"type": "string",
+										"description": "User Defined Field",
+										"example": ""
+									},
+									"udf9": {
+										"type": "string",
+										"description": "User Defined Field",
+										"example": ""
+									},
+									"unmappedstatus": {
+										"type": "string",
+										"description": "PayU parameter for internal use.",
+										"example": "captured"
+									},
+									"version": {
+										"type": "string",
+										"description": "",
+										"example": ""
+									},
+									"zipcode": {
+										"type": "string",
+										"description": "",
+										"example": ""
+									}
+								},
+								"type": "object"
+							}
+						}
+					}
+				},
+				"status": {
+					"type": "integer",
+					"format": "int32",
+					"description": "The API Response Status",
+					"example": "0"
+				}
+			}
+		},
+		"InvoiceSearchRequest": {
+			"type": "object",
+			"properties": {
+				"amount": {
+					"type": "string",
+					"description": "Amount for which invoice is to be searched",
+					"example": "10.00"
+				},
+				"invoiceDescription": {
+					"type": "string",
+					"description": "Description for which the invoice is to be searched",
+					"example": "Rent for January"
+				},
+				"invoiceNumber": {
+					"type": "string",
+					"description": "Unique Id to identify an invoice",
+					"example": "INV12345678"
+				},
+				"source": {
+					"type": "string",
+					"description": "Parameter to identify source sending the request",
+					"example": "API_INT_INVOICE"
+				},
+				"status": {
+					"type": "string",
+					"description": "Parameter to identify status of the invoice to be searched",
+					"example": "ACTIVE"
+				},
+				"tinyUrl": {
+					"type": "string",
+					"description": "Url for which invoice is to be searched",
+					"example": "www.pmny.com/txnID"
+				},
+				"to": {
+					"type": "string",
+          "description": "End date to search invoices",
+					"format": "date-time"
+				},
+				"from": {
+					"type": "string",
+          "description": "Start date to search invoices",
+					"format": "date-time"
+				}
+			}
+		},
+		"InvoiceSearchResponseDTO": {
+			"type": "object",
+			"properties": {
+				"errorCode": {
+					"type": "integer",
+					"format": "int32"
+				},
+				"guid": {
+					"type": "string",
+					"example": "null"
+				},
+				"message": {
+					"type": "string",
+					"example": "SUCCESS"
+				},
+				"result": {
+					"type": "object",
+					"properties": {
+						"invoiceSearchResponse": {
+							"type": "object",
+							"properties": {
+								"addedOn": {
+									"type": "string",
+									"example": "https://www.payumoney.com/invoicing/invoice/5860100/INV585808382170816"
+								},
+								"invoiceNumber": {
+									"type": "string",
+									"example": "INV585808382170816"
+								},
+								"invoiceDescription": {
+									"type": "integer",
+									"format": "int32",
+									"example": 200
+								},
+								"amount": {
+									"type": "string",
+									"example": "SUCCESS"
+								},
+								"status": {
+									"type": "string",
+									"example": "https://www.payumoney.com/invoicing/invoice/5860100/INV585808382170816"
+								},
+								"shortenedUrl": {
+									"type": "string",
+									"example": "INV585808382170816"
+								},
+								"expiryDate": {
+									"type": "integer",
+									"format": "int32",
+									"example": 200
+								}
+							}
+						},
+						"errorCode": {
+							"type": "integer",
+							"format": "int32",
+							"example": 200
+						},
+						"errorMsg": {
+							"type": "string",
+							"example": "SUCCESS"
+						}
+					}
+				},
+				"rows": {
+					"type": "integer",
+					"format": "int32"
+				},
+				"status": {
+					"type": "integer",
+					"format": "int32"
+				}
+			}
+		},
+		"Amount": {
+			"type": "object",
+			"properties": {
+				"discount": {
+					"type": "string",
+					"description": "Discount amount which will be levied upto two decimal places",
+          "required": false,
+					"example": "10.00"
+				},
+				"shippingCharge": {
+					"type": "string",
+					"description": "Shipping Charge which will be charged upto two decimal places",
+          "required": false,
+					"example": "10.00"
+				},
+				"subAmount": {
+					"type": "string",
+					"description": "Mandatory Field. Amount which will be charged upto two decimal places",
+					"example": "10.00",
+          "required": true
+				},
+				"tax": {
+					"type": "string",
+					"description": "Tax which will be charged upto two decimal places",
+          "required": false,
+					"example": "10.00"
+				}
+			}
+		},
+		"Channel": {
+			"type": "object",
+			"properties": {
+				"viaEmail": {
+					"type": "boolean",
+					"description": "For sending payment links by Email, value is set to 1",
+          "required": false,
+					"example": 1
+				},
+				"viaSms": {
+					"type": "boolean",
+					"description": "For sending payment links by SMS, value is set to 1",
+          "required": false,
+					"example": 1
+				}
+			}
+		},
+		"SingleInvoicePaymentResponse": {
+			"type": "object",
+			"properties": {
+				"errorCode": {
+					"type": "integer",
+					"format": "int32"
+				},
+				"guid": {
+					"type": "string",
+					"example": "null"
+				},
+				"message": {
+					"type": "string",
+					"example": "SUCCESS"
+				},
+				"result": {
+					"type": "object",
+					"properties": {
+						"specialMsg": {
+							"type": "string",
+							"example": "https://www.payumoney.com/invoicing/invoice/5860100/INV585808382170816"
+						},
+						"data": {
+							"type": "string",
+							"example": "INV585808382170816"
+						},
+						"errorCode": {
+							"type": "integer",
+							"format": "int32",
+							"example": 200
+						},
+						"errorMsg": {
+							"type": "string",
+							"example": "SUCCESS"
+						}
+					}
+				},
+				"rows": {
+					"type": "integer",
+					"format": "int32"
+				},
+				"status": {
+					"type": "integer",
+					"format": "int32"
+				}
+			}
+		},
+		"Address": {
+			"type": "object",
+			"properties": {
+				"addressCity": {
+					"type": "string",
+					"description": "Address city of the consumer",
+          "required": false,
+					"example": "Gurgaon"
+				},
+				"addressCountry": {
+					"type": "string",
+					"description": "Address country of the consumer",
+          "required": false,
+					"example": "India"
+				},
+				"addressState": {
+					"type": "string",
+					"description": "Address state of the consumer",
+          "required": false,
+					"example": "Haryana"
+				},
+				"addressStreet1": {
+					"type": "string",
+					"description": "Address street of the consumer",
+          "required": false,
+					"example": "Payu Payments Pvt. Ltd , Sector 49, Sohna road"
+				},
+				"addressStreet2": {
+					"type": "string",
+					"description": "Address street of the consumer",
+          "required": false,
+					"example": "10.00"
+				},
+				"addressZip": {
+					"type": "string",
+					"description": "Address zip of the consumer",
+          "required": false,
+					"example": "313001"
+				}
+			}
+		},
+		"SingleInvoicePaymentRequest": {
+			"type": "object",
+			"properties": {
+				"addedOn": {
+					"type": "string",
+          "description": "Creation date and time for a payment link",
+          "required": false,
+					"format": "date-time"
+				},
+				"amount": {
+					"$ref": "#/definitions/Amount"
+				},
+				"bulkRequest": {
+					"type": "boolean",
+					"description": "For single invoice creation, value of bulkRequest is 0. (For future use)",
+          "required": false,
+					"example": 0
+				},
+				"channel": {
+					"$ref": "#/definitions/Channel"
+				},
+				"currency": {
+					"type": "string",
+					"description": "Three digit alphabetic currency of the amount for which invoice is to be generated (Default : INR)",
+          "required": false,
+					"example": "INR"
+				},
+				"customParams": {
+					"type": "object",
+					"properties": {
+						"CustomerID": {
+							"type": "string",
+							"description": "User defined parameters (Up to 15 parameters supported)",
+              "required": false,
+							"example": "23451243"
+						}
+					}
+				},
+				"expiryDate": {
+					"type": "string",
+          "description": "Expiration date and time for the payment links",
+          "required": false,
+					"format": "date-time"
+				},
+				"furl": {
+					"type": "string",
+					"description": "Failure Url on which merchant will be redirected in case of a unsuccessful payment",
+          "required": false,
+					"example": "www.payumoney.com/failure/txnID"
+				},
+				"invoiceDescription": {
+					"type": "string",
+					"description": "Mandatory Field. Description of the invoice to be generated. Max. 40 characters supported. ",
+          "required": true,
+					"example": "Rent for January"
+				},
+				"invoiceNumber": {
+					"type": "string",
+					"description": "Unique Id to identify an invoice. 16 characters invoice number supported. Merchant can either pass a value or it is auto generated.",
+          "required": false,
+					"example": "INV12345678"
+				},
+				"invoiceStatus": {
+					"type": "string",
+					"description": "Current Status of the Invoice Link (ACTIVE/INACTIVE/EXPIRED)",
+          "required": false,
+					"example": "0"
+				},
+				"maxPaymentsAllowed": {
+					"type": "integer",
+          "description": "Maximum number of successful payment allowed for a payment link",
+          "required": false,
+					"format": "int32"
+				},
+				"merchantId": {
+					"type": "string",
+					"description": "Mandatory Field. Merchant Id of the merchant requesting Invoice Creation",
+          "required": true,
+          "example": "146"
+				},
+				"signature": {
+					"type": "string",
+					"description": "Mandatory Field. Signature/Hash for the invoice to be generated (For security purposes)",
+          "required": true,
+					"example": "E7A90CEF655ED35375FE0C3AF0C8BDB7ACEDAA88687A2CEB6A567F09073AA9B0"
+				},
+				"source": {
+					"type": "string",
+					"description": "Source of Invoice creation request (For internal use)",
+          "required": false,
+					"example": "API_INT_INVOICE"
+				},
+				"surl": {
+					"type": "string",
+					"description": "Success Url on which merchant will be redirected in case of a successful payment",
+          "required": false,
+					"example": "www.payumoney.com/success/txnID"
+				},
+				"userDetails": {
+					"$ref": "#/definitions/UserDetails"
+				}
+			}
+		},
+		"UserDetails": {
+			"type": "object",
+			"properties": {
+				"address": {
+					"$ref": "#/definitions/Address"
+				},
+				"alternate_number": {
+					"type": "string",
+					"description": "Additional Mobile Number ",
+          "required": false,
+					"example": "9806754321"
+				},
+				"email": {
+					"type": "string",
+					"description": "Email ID on which the payment link is send",
+          "required": false,
+					"example": "john.doe@gmail.com"
+				},
+				"name": {
+					"type": "string",
+					"description": "Consumer Name",
+          "required": false,
+					"example": "John Doe"
+				},
+				"phone_number": {
+					"type": "string",
+					"description": "Mobile Number on which the payment link is send as SMS",
+          "required": false,
+					"example": "9999988888"
+				}
+			}
+		},
+		"ManageInvoiceResponse": {
+			"type": "object",
+			"properties": {
+				"errorCode": {
+					"type": "integer",
+					"format": "int32"
+				},
+				"guid": {
+					"type": "string"
+				},
+				"message": {
+					"type": "string"
+				},
+				"result": {
+					"type": "object",
+					"properties": {
+						"status": {
+							"type": "string",
+							"example": "ACTIVE"
+						},
+						"errorCode": {
+							"type": "integer",
+							"format": "int32",
+							"example": 200
+						},
+						"errorMsg": {
+							"type": "string",
+							"example": "SUCCESS"
+						}
+					}
+				},
+				"rows": {
+					"type": "integer",
+					"format": "int32"
+				},
+				"status": {
+					"type": "integer",
+					"format": "int32"
+				}
+			}
+		},
+		"GenerateSignatureResponseDTO": {
+			"type": "object",
+			"properties": {
+				"errorCode": {
+					"type": "integer",
+					"format": "int32"
+				},
+				"guid": {
+					"type": "string",
+					"example": "null"
+				},
+				"message": {
+					"type": "string",
+					"example": "SUCCESS"
+				},
+				"result": {
+					"type": "object",
+					"properties": {
+						"signature": {
+							"type": "string",
+							"example": "asdfg456789fghjkl6789"
+						},
+						"errorCode": {
+							"type": "integer",
+							"format": "int32",
+							"example": 200
+						},
+						"errorMsg": {
+							"type": "string",
+							"example": "SUCCESS"
+						}
+					}
+				},
+				"rows": {
+					"type": "integer",
+					"format": "int32"
+				},
+				"status": {
+					"type": "integer",
+					"format": "int32"
+				}
+			}
+		}
+	}
+}

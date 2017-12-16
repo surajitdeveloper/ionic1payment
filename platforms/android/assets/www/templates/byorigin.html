@@ -1,0 +1,14 @@
+<ion-view cache-view="false">
+    <ion-content class="royal-bg home-page">
+      
+    <div class="padding text-center">
+      <img class="logo-image" src="img/baby images/smilebaby.png" />
+    </div>
+    <div class="list padding" ng-repeat="list in originList">
+      <div class="item item-icon-left" ng-click="openAlpha(list.origin)">
+        <img class="icon list-icon-img" ng-src='img/{{$index+1}}.png'/>
+        {{list.origin}}
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

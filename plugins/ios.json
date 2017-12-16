@@ -1,0 +1,65 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-apprate": {
+      "PACKAGE_NAME": "com.ionicframework.babyname258048"
+    },
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "com.ionicframework.babyname258048"
+    },
+    "cordova-plugin-geolocation": {
+      "GEOLOCATION_USAGE_DESCRIPTION": " ",
+      "PACKAGE_NAME": "com.ionicframework.babyname258048"
+    },
+    "cordova-plugin-inappbrowser": {
+      "PACKAGE_NAME": "com.ionicframework.babyname258048"
+    },
+    "cordova-plugin-ionic-webview": {
+      "PACKAGE_NAME": "com.ionicframework.babyname258048"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "com.ionicframework.babyname258048"
+    },
+    "cordova-plugin-statusbar": {
+      "PACKAGE_NAME": "com.ionicframework.babyname258048"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.ionicframework.babyname258048"
+    },
+    "cordova-plugin-x-socialsharing": {
+      "PACKAGE_NAME": "com.ionicframework.babyname258048"
+    },
+    "ionic-plugin-keyboard": {
+      "PACKAGE_NAME": "com.ionicframework.babyname258048"
+    },
+    "cordova-plugin-compat": {
+      "PACKAGE_NAME": "com.ionicframework.babyname258048"
+    },
+    "cordova-plugin-googleplus": {
+      "REVERSED_CLIENT_ID": "com.googleusercontent.apps.1074704875676-ve7p4makgoi345mlc9bc5uikctu0bdnl",
+      "PACKAGE_NAME": "com.uniquesikhbabynames.app"
+    },
+    "cordova-plugin-facebook4": {
+      "APP_ID": "118733138820962",
+      "APP_NAME": "Unique Sikh Baby Names",
+      "PACKAGE_NAME": "com.uniquesikhbabynames.app"
+    }
+  },
+  "dependent_plugins": {
+    "cordova-plugin-dialogs": {
+      "PACKAGE_NAME": "com.ionicframework.babyname258048"
+    },
+    "cordova-plugin-globalization": {
+      "PACKAGE_NAME": "com.ionicframework.babyname258048"
+    },
+    "es6-promise-plugin": {
+      "PACKAGE_NAME": "com.ionicframework.babyname258048"
+    }
+  }
+}

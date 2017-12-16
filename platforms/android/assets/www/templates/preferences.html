@@ -1,0 +1,63 @@
+<ion-view >
+  <ion-content class="preferences-page royal-bg padding">
+    <h3 class="text-center mono bablog_text">Preference</h3>
+    <h4 class="text-center mono">Hi, {{choice.fname}} - Please Mark your preferences</h4>
+    <div class="list">
+      <label class="item item-input item-select">
+        <div class="input-label ">
+          <span class="energized mono buyp-txt">Alphabet Preference</span>
+        </div>
+        <select ng-model="choice.alphabetId" class="pref-op">
+          <option selected>--select--</option>
+           <option ng-repeat="option in options.alpha"  value="{{option.value}}">{{option.name}}</option>
+        </select>
+      </label>
+    </div>
+    <div class="list">
+      <label class="item item-input item-select">
+        <div class="input-label ">
+          <span class="energized mono buyp-txt">Origin</span>
+        </div>
+        <!-- ng-options="product.origin_name for product in options.origin" -->
+        <select ng-model="choice.origin"  class="pref-op">
+          <option selected>--select--</option>
+           <!--option ng-repeat="option in options.origin" ng-model="choice.origin" value="{{option.id}}">{{option.origin_name}}</option-->
+           <option value="1">English</option>
+           <option value="2">Punjabi</option>
+        </select>
+      </label>
+    </div>
+    <div class="list">
+      <label class="item item-input item-select">
+        <div class="input-label ">
+          <span class="energized mono buyp-txt">Meaning</span>
+        </div>
+        <!-- ng-options="product.adjective_name for product in options.meaning" ng-value="product.name" -->
+        <select ng-model="choice.meaning" class="pref-op">
+          <option selected>--select--</option>
+           <option ng-repeat="option in options.meaning" value="{{option.$$hashKey}}">{{option.meaning1}}</option>
+        </select>
+      </label>
+    </div>
+    <div class="list">
+      <label class="item item-input item-select">
+        <div class="input-label ">
+          <span class="energized mono buyp-txt">Gender of the Child</span>
+        </div>
+        <!-- ng-options="product.name for product in options.gender" ng-value="product.value" -->
+        <select ng-model="choice.gender"  class="pref-op">
+          <option selected>--select--</option>
+           <option ng-repeat="option in options.gender"  value="{{option.value}}">{{option.name}}</option>
+        </select>
+      </label>
+    </div>
+    <div class="row">
+      <div class="col  text-center">
+      <button class="button button-font button-block bablog_btn cus-btn-login btn-spcr" ng-click="savePreferences()">
+        Save
+      </button>
+    </div>
+  </div>
+  </ion-content>
+</ion-view>
+

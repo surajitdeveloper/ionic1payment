@@ -1,0 +1,29 @@
+<ion-view >
+  <ion-content class="royal-bg home-page">
+
+    <div class="card list padding" ng-repeat="Plan in List" ng-click="gotoname(Plan.plan_id, Plan.alphabet, Plan.gender)">
+
+            <div class="item item-divider wrap">
+                Plan Name: {{Plan.plan_name}}
+            </div>
+            <div class="item item-text-wrap wrap">
+                <span class="plan">Alphabet: {{Plan.alphabet}}</span><br>
+                <span class="plan">Membership Type: {{Plan.membership_type}}</span><br>
+                <span class="plan">Membership Duration: {{Plan.membership_duration}}</span><br>
+                <span class="plan">Rate: {{Plan.rate}}</span>
+            </div>
+        </div>
+        <!-- <div class="text-center">
+          <button class="button button-large button-outline button-dark mono bablog_btn cus-btn-login" ng-click="payment()">
+            Continue
+          </button>
+        </div> -->
+
+        
+
+  </ion-content>
+  <div class="bar bar-footer bar-royal">
+  <button class="button  button-clear" style="margin-left: 157px; font-size: 19px; font-style: normal;
+  font-family: arial !important; margin-top: -8px;" ng-click="addMorePlan()">Buy More</button>
+</div>
+</ion-view>

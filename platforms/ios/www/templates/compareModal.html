@@ -1,0 +1,115 @@
+<ion-view >
+  <ion-content class="royal-bg padding common-page">
+    <div class="padding text-center">
+      <h2 class="bablog_text">Connect mom and dad</h2>
+    </div>
+    <ion-slide-box on-slide-changed="slideChanged(index)" does-continue="false" show-pager="false">
+      <ion-slide>
+        <div class="padding text-center">
+          <h4 class="energized mono italic">Enter Your Spouse Details To Connect:</h4>
+        </div>
+        <form >
+          <div class="list">
+            <label class="item item-input com-m-d">
+              <!--<span class="input-label energized">Mobile/Email</span>-->
+              <input type="text" ng-model="username" class="custom-login" placeholder="Mobile / Email">
+            </label>
+          </div>
+          <div class="row">
+            <div class="col text-center">
+              <span ng-click="doSearch(username)" class="text-center button-text mono italic dark cus-btn-login c-m-d-btn"><i class="icon ion-search dark"></i>  Search</span>
+            </div>
+          </div>
+        </form>
+        <div class="container-indi">
+          <section class="step-indicator">
+            <div class="step step1 active">
+                <div class="step-icon"><i class="icon ion-android-search"></i></div>
+            </div>
+            <div class="indicator-line active"></div>
+            <div class="step step2">
+                <div class="step-icon"><i class="icon ion-lock-combination"></i></div>
+            </div>
+            <div class="indicator-line"></div>
+            <div class="step step3">
+                <div class="step-icon"><i class="icon ion-android-done-all"></i></div>
+            </div>
+          </section>
+        </div>
+      </ion-slide>
+      <ion-slide>
+        <div class="padding text-center">
+          <h4 class="energized mono italic">Enter OTP recieved on spouse Email/Mobile:</h4>
+        </div>
+        <form >
+          <div class="list">
+            <label class="item item-input">
+              <span class="input-label energized">OTP</span>
+              <input type="text" ng-model="otp">
+            </label>
+          </div>
+          <!-- {{humanizeDurationTimer(timer,'s')}} -->
+          <!-- <div class="row">
+            <div class="col text-center">
+              <span ng-if="!done">{{humanizeDurationTimer(timer,'s')}}</span>
+              <span ng-if="done" ng-click="resendOTP()">Re-Send OTP</span>
+            </div>
+          </div> -->
+
+          <div class="row">
+            <div class="col text-center">
+              <span ng-click="doVerify(otp)" class="text-center button-text mono italic dark cus-btn-login c-m-d-btn">Verify</span>
+            </div>
+          </div>
+        </form>
+        <div class="container-indi">
+          <section class="step-indicator">
+            <div class="step step1 active">
+                <div class="step-icon"><i class="icon ion-android-search"></i></div>
+            </div>
+            <div class="indicator-line active"></div>
+            <div class="step step2 active">
+                <div class="step-icon"><i class="icon ion-lock-combination"></i></div>
+            </div>
+            <div class="indicator-line active"></div>
+            <div class="step step3">
+                <div class="step-icon"><i class="icon ion-android-done-all"></i></div>
+            </div>
+          </section>
+        </div>
+      </ion-slide>
+      <ion-slide>
+        <div class="padding text-center">
+          <h4 class="energized mono italic">You have successfully connect with your spouse</h4>
+        </div>
+        <form >
+          <div class="row">
+            <div class="col text-center">
+              <span ng-click="doFinish()" class="text-center button-text mono italic dark cus-btn-login c-m-d-btn">Finish</span>
+            </div>
+          </div>
+        </form>
+        <div class="container-indi">
+          <section class="step-indicator">
+            <div class="step step1 active">
+                <div class="step-icon"><i class="icon ion-android-search"></i></div>
+            </div>
+            <div class="indicator-line active"></div>
+            <div class="step step2 active">
+                <div class="step-icon"><i class="icon ion-lock-combination"></i></div>
+            </div>
+            <div class="indicator-line active"></div>
+            <div class="step step3 active">
+                <div class="step-icon"><i class="icon ion-android-done-all"></i></div>
+            </div>
+          </section>
+        </div>
+      </ion-slide>
+    </ion-slide-box>
+  </ion-content>
+  <ion-footer-bar class="bar-royal custom-footer">
+    <button class="button button-font button-block bablog_btn cus-btn-login extra-con" ng-click="cancel()">
+      Cancel
+    </button>
+  </ion-footer-bar>
+</ion-view>

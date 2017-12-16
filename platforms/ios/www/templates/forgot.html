@@ -1,0 +1,113 @@
+
+<ion-side-menus enable-menu-with-back-views="false" cache-view="false" ></ion-side-menus>
+<ion-view view-title="SignUp" hide-nav-bar="true" can-swipe-back="false" cache-view="false">
+  
+  <ion-header-bar class="bar-royal bar bar-header" align-title="center">
+    <button onclick="window.history.back" class="button back-button buttons button-clear header-item">
+      <i class="icon ion-ios-arrow-back"></i> 
+      <span class="back-text" style="transform: translate3d(0px, 0px, 0px);"></span>
+    </button><div class="buttons buttons-left header-item" >
+      <span class="left-buttons">
+    <button class="button button-icon button-clear ion-navicon button-dark hide" menu-toggle="left">
+    </button>
+  </span></div><div class="title title-center header-item" style="transform: translate3d(0px, 0px, 0px); left: 31px; right: 31px;"><span class="nav-bar-title">
+    <a href="#/home"><div class="button button-clear" id="hm-f">
+      Unique Sikh Baby Names
+    </div></a>
+  </span></div><div class="buttons buttons-right header-item"><span class="right-buttons">
+    <button class="button button-icon button-clear ion-android-more-vertical button-dark hide" menu-toggle="right">
+    </button>
+  </span>
+</div>
+</ion-header-bar>
+  
+  <ion-content class="royal-bg login-page padding">
+    <!-- <i class="icon ion-refresh" ng-click="backtoLogin()"></i> -->
+    <div class="padding text-center">
+
+      <h1 ng-click="home()" class="baby_name">Unique Sikh Baby Names</h1>
+    </div>
+    <ion-slide-box on-slide-changed="slideChanged(index)" does-continue="false" show-pager="false">
+      
+      <ion-slide>
+        <div class="padding text-center">
+          <h2 class="bablog_text">Forgot Password</h2>
+        </div>
+        <form name="Fform" novalidate>
+          <div class="list bablog_box">
+            <label class="item item-input custom-login">
+              <!--<span class="input-label energized">Mobile/Email</span>-->
+              <input type="text" ng-model="username" placeholder="Mobile/Email"  name="username"  required>
+            </label>
+          </div>
+
+          <div class="row">
+            <div class="col text-center ">
+              <button class="button button-outline button-dark button-font bbbtn" ng-disabled="Fform.$invalid" value="Validate" ng-click="doForgot(username)">Submit</button>
+            </div>
+          </div>
+
+          <!-- <div class="row">
+            <div class="col text-center">
+              <a class="dark dark_text" href="#/login">Existing User. Click here to <span class="babsignup">Login</span></a>
+            </div>
+          </div> -->
+        </form>
+      </ion-slide>
+      <ion-slide>
+        <div class="padding text-center">
+          <h2 class="bablog_text">Enter OTP</h2>
+        </div>
+        <form name="Oform" novalidate>
+          <div class="list bablog_box">
+            <label class="item item-input custom-login">
+              <!--<span class="input-label energized">Mobile/Email</span>-->
+              <input type="tel" ng-model="otp" placeholder="Enter OTP" name="otp" required ng-minlength="4" ng-maxlength="4">
+            </label>
+          </div>
+
+          <div class="row">
+            <div class="col text-center ">
+              <button class="button button-outline button-dark button-font bbbtn" ng-disabled="Oform.$invalid" value="Validate" ng-click="verify(otp)">Submit</button>
+            </div>
+          </div>
+
+          <!-- <div class="row">
+            <div class="col text-center">
+              <a class="dark dark_text" href="#/login">Existing User. Click here to <span class="babsignup">Login</span></a>
+            </div>
+          </div> -->
+        </form>
+      </ion-slide>
+      <ion-slide>
+        <div class="padding text-center">
+          <h2 class="bablog_text">Reset Password</h2>
+        </div>
+        <form name="Rform" novalidate>
+          <div class="list bablog_box">
+            <label class="item item-input">
+              <span class="input-label energized">Password</span>
+              <input type="password" ng-model="password" name="pass" ng-minlength="6" ng-maxlength="8" required>
+            </label>
+            <label class="item item-input">
+              <span class="input-label energized">Re-Type Password</span>
+              <input type="password" ng-model="repassword" name="repass" ng-minlength="6" ng-maxlength="8" required>
+            </label>
+          </div>
+
+          <div class="row">
+            <div class="col text-center">
+              <button class="button button-outline button-dark button-font bbbtn" ng-disabled="Rform.$invalid" ng-click="updatePass(password,repassword)">Update</button>
+            </div>
+          </div>
+           <!-- <div class="row">
+            <div class="col text-center">
+              <a class=" babreset" href="#/login">Back To Login Page</a>
+            </div>
+          </div> -->
+        </form>
+      </ion-slide>
+    </ion-slide-box>
+  </ion-content>
+</ion-view>
+</ion-side-menus>

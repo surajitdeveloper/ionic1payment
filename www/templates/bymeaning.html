@@ -1,0 +1,24 @@
+<ion-view cache-view="false">
+    <ion-content class="royal-bg by-alpha-page">
+     
+    <div class="padding text-center">
+      <!-- <img class="logo-image" src="img/baby.png" /> -->
+      <img class="logo-image" src="img/baby images/smilebaby.png" />
+    </div>
+    <div class="padding ">
+      <ion-search-select title="Search a Meaning" key-property="id" value-property="name" options="editUser.users" option-selected="editUser.user">
+        <label >
+          <div class="item-input-wrapper inputbname">
+            <i class="icon ion-ios-search"></i>
+            <input class="border-z" type="text" ng-model="editUser.user.name" placeholder="Search" disabled>
+          </div>
+        </label>
+      </ion-search-select>
+      <div class="row">
+        <div class="col text-center">
+          <button class="button button-outline button-dark bbbtn" ng-click="next(editUser.user.name)">Next</button>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

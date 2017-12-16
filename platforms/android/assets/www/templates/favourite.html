@@ -1,0 +1,16 @@
+<ion-view >
+  <ion-content class="favourite-page royal-bg">
+    <h3 class="energized text-center italic mono">{{len}} names to decide from</h3>
+    <div class="list" ng-repeat="names in students">
+      <div class="item item-icon-right">
+        <span class="fav-name">{{names.name}}</span>
+        <p class="fav-mean fav_limit">{{names.english_meaning}}</p>
+        <div class="icon">
+          <i class="right_margin pink" ng-class="names.selected == 'true' ? 'ion-ios-star':'ion-ios-star-outline'" ng-click="hasSelect(names.selected,names.name_id)"></i>
+          <i class="right_margin assertive" ng-class="names.favorite == 'true' ? 'ion-ios-heart':'ion-ios-heart-outline'" ng-click="hasFav(names.favorite,names.name_id)"></i>
+          <i class="right_margin ion-android-share-alt dark" ng-click="share(names)"></i>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

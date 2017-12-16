@@ -1,0 +1,46 @@
+<ion-view >
+  <ion-content class="common-page royal-bg">
+  		<div class="row">
+  			<div class="col text-center mono title com-b-txt" >Your favourite names</div>
+  		</div>
+  		<div class="row text-center">
+        <div class="col-33" ng-click="changeList(0)">
+          <i class="icon  larger-icon assertive" ng-class="show == 0 ?'ion-ios-heart':'ion-ios-heart-outline'"></i>
+        </div>
+        <div class="col-33" ng-click="changeList(1)">
+          <i class="icon  larger-icon assertive" ng-class="show == 1 ?'ion-ios-heart':'ion-ios-heart-outline'"></i>
+        </div>
+        <div class="col-33" ng-click="changeList(2)">
+          <i class="icon  larger-icon assertive" ng-class="show == 2 ?'ion-ios-heart':'ion-ios-heart-outline'"></i>
+        </div>
+  		</div>
+  		<div class="row text-center">
+  			<div class="col-33 mono title com-s-txt">You</div>
+  			<div class="col-33 mono title com-s-txt">Mom & Dad</div>
+  			<div class="col-33 mono title com-s-txt">Spouse</div>
+  		</div>
+      <ion-scroll direction="y" style="height: 90%" class="padding">
+        <div class="list animation" ng-repeat="name in list.user_favorites | orderBy: 'name'" ng-if="show == 0">
+          <div class="item item-icon-left item-icon-right" >
+            <i class="icon larger-icon assertive ion-ios-heart"></i>
+            <span class="text-center mono title">{{name.name}}</span>
+            <i class="icon larger-icon assertive" ng-class="name.status ? 'ion-ios-heart':'ion-ios-heart-outline'"></i>
+          </div>
+        </div>
+        <div class="list animation" ng-repeat="name in list.common_favorites | orderBy: 'name'" ng-if="show == 1">
+          <div class="item item-icon-left item-icon-right" >
+            <i class="icon larger-icon assertive ion-ios-heart"></i>
+            <span class="text-center mono title">{{name.name}}</span>
+            <i class="icon larger-icon assertive ion-ios-heart"></i>
+          </div>
+        </div>
+        <div class="list animation" ng-repeat="name in list.spouse_favorites | orderBy: 'name'" ng-if="show == 2">
+          <div class="item item-icon-left item-icon-right" >
+            <i class="icon larger-icon assertive" ng-class="name.status ? 'ion-ios-heart':'ion-ios-heart-outline'"></i>
+            <span class="text-center mono title">{{name.name}}</span>
+            <i class="icon larger-icon assertive ion-ios-heart" ></i>
+          </div>
+        </div>
+      </ion-scroll>
+  </ion-content>
+</ion-view>

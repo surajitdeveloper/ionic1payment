@@ -1,0 +1,101 @@
+<ion-side-menus enable-menu-with-back-views="false" cache-view="false" >
+  <ion-side-menu-content drag-content="false">
+    <ion-nav-bar class="bar-royal" align-title="center">
+      <ion-nav-back-button></ion-nav-back-button>
+      <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-navicon button-dark " menu-toggle="left">
+        </button>
+      </ion-nav-buttons>
+      <ion-nav-title>
+        <div class="button button-clear" id="hm-f" ng-click="home()">
+          Unique Sikh Baby Names
+        </div>
+      </ion-nav-title>
+      <ion-nav-buttons side="right">
+        <button class="button button-icon button-clear ion-android-more-vertical button-dark " menu-toggle="right">
+        </button>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-nav-view name="menuContent"></ion-nav-view>
+  </ion-side-menu-content>
+
+  <ion-side-menu side="left">
+    <ion-content>
+      <ion-list>
+        <div class="header-bg-img" menu-close>
+            <div class="padding"></div>
+            <div class="row">
+                <div class="col text-center">
+                    <img class="profile-pic" src="{{choice.user_pic}}">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col text-center text-wrap">
+                    <!-- <h5>{{getLoggedInUser}}</h5> -->
+                    <h4>{{choice.fname}}</h4>
+                </div>
+            </div>
+        </div>
+        <!--
+href="#/app/preferences"href="#/app/aboutUnique"href="#/app/goAddFree"href="#/app/compare"href="#/app/aboutus"href="#/app/contactus" 
+  href="#/app/tocondition" href="#/app/ppolicy" href="#/app/login"  href="#/login"  -->
+        <ion-item class="mono menu-item" menu-toggle  ng-click="goto('login')" ng-if="!loggedIn"><!-- menu-close -->
+         SIGN UP/ LOGIN IN
+        </ion-item>
+        <ion-item class="mono menu-item" menu-close  ng-click="goto('app.preferences')">
+          MAKE/CHANGE PREFERENCE
+        </ion-item>
+        <ion-item class="mono menu-item" menu-close  ng-click="goto('app.aboutUnique')">
+          About UNIQUE NAME
+        </ion-item>
+        <ion-item class="mono menu-item" menu-close  ng-click="goto('app.goAddFree')">
+          GO AD FREE
+        </ion-item>
+        <ion-item class="mono menu-item" menu-close  ng-click="goto('app.compare')">
+          COMPARE MOM AND DAD
+        </ion-item>
+        <ion-item class="mono menu-item" menu-close  ng-click="goto('app.aboutus')">
+          ABOUT US
+        </ion-item>
+        <ion-item class="mono menu-item" menu-close ng-click="goto('app.contactus')">
+          CONTACT US
+        </ion-item>
+        <ion-item class="mono menu-item" menu-close  ng-click="goto('app.tocondition')">
+          TERMS OF USE
+        </ion-item>
+        <ion-item class="mono menu-item" menu-close  ng-click="goto('app.ppolicy')">
+          PRIVACY POLICY
+        </ion-item>
+        <ion-item class="mono menu-item relog" menu-close ng-click="loggedOut()" ng-if="loggedIn">
+          LOG OUT
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
+  <ion-side-menu side="right">
+    <ion-content class="menu-item">
+      <ion-list>
+        <ion-item class="mono menu-item" menu-close ng-click="share()">
+          Share App Link
+        </ion-item>
+        <ion-item class="mono menu-item" menu-close ng-click="goto('app.feedback')"><!-- href="#/app/feedback"href="#/app/moreapp" -->
+          Feedback
+        </ion-item>
+        <ion-item class="mono menu-item" menu-close ng-click="rateUs()">
+          Rate Us
+        </ion-item>
+        <ion-item class="mono menu-item" menu-close ng-click="goto('app.moreapp')">
+          More Apps
+        </ion-item>
+        <ion-item class="mono menu-item" menu-close ng-click="goto('app.returnPolicy')">
+            Return and Refund Policy
+          </ion-item> <ion-item class="mono menu-item" menu-close ng-click="goto('app.policyShipping')">
+              Shipping & Delivery Information
+            </ion-item> 
+            <ion-item class="mono menu-item" menu-close ng-click="goto('app.bookingProcess')">
+                Booking Process
+              </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>

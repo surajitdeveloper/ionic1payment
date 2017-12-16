@@ -1,0 +1,39 @@
+<ion-view cache-view="false">
+  <ion-content class="nameLista" scroll="false" no-scroll>
+    
+    <!-- ion-slide-box show-pager="false" on-slide-changed="slideChanged(employee.id)"-->
+      <!--ion-slides-->
+          <!-- <ion-slide ng-repeat="employee in list">
+              <div class="box-bg-trans">
+                <div class="box1">
+                  <div class="icon11">
+                    <i class="icon ion-ios-heart assertive fav-icon custom_heart" ng-class="employee.favorite == 'true' ? 'ion-ios-heart':'ion-ios-heart-outline'" ng-click="addFav(employee.id)"></i>
+                  </div> -->
+                  <!-- <i class="icon ion-ios-heart fav-icon assertive custom_heart" ng-click="addFav(employee.id)"></i> -->
+                  <!-- <i class="icon ion-ios-heart assertive fav-icon custom_heart" ng-click="addFav(employee.id)"></i> -->
+                  <ion-slides options="sliderOptions" slider="sliderDelegate">
+                    <ion-slide-page ng-repeat="employee in list">
+                      <div class="box1">
+                        <div class="name-list-pajnabi">
+                          <div class="etc" >
+                            <H2 class="name-list-a sfont">{{employee.name}}</H2>
+                            <H2 class="name-list-a sfont">{{employee.punjabi_name}}</H2>
+                            <H2 class="name-list-a smallf">{{employee.english_meaning}}</H2>
+                            <H2 class="name-list-a smallf">{{employee.punjabi_meaning}}</H2>
+                        </div>
+                        </div> 
+                    </div>
+               <div class="hh-sec">
+                  <div class="result-showing name-list-a smallf">Showing {{employee.current_result}}/{{total_result}}</div>
+                 <a class="icon list-icon-img" ng-click="home()">
+        <img class="icon list-icon-img " src="img/alpha/24.png"/>
+        </a>
+        <div class="icon11">
+          <i class="icon ion-ios-heart assertive fav-icon custom_heart" ng-class="employee.favorite == 'true' ? 'ion-ios-heart':'ion-ios-heart-outline'" ng-click="addFav(employee.id, employee.current_result)"></i>
+          </div>
+              </div>
+            </ion-slide-page>
+          </ion-slides>
+        
+  </ion-content>
+</ion-view>

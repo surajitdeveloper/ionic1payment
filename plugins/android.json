@@ -1,0 +1,60 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-apprate": {
+      "PACKAGE_NAME": "com.uniquesikhbabynames.app"
+    },
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "com.uniquesikhbabynames.app"
+    },
+    "cordova-plugin-geolocation": {
+      "PACKAGE_NAME": "com.uniquesikhbabynames.app"
+    },
+    "cordova-plugin-inappbrowser": {
+      "PACKAGE_NAME": "com.uniquesikhbabynames.app"
+    },
+    "cordova-plugin-ionic-webview": {
+      "PACKAGE_NAME": "com.uniquesikhbabynames.app"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "com.uniquesikhbabynames.app"
+    },
+    "cordova-plugin-statusbar": {
+      "PACKAGE_NAME": "com.uniquesikhbabynames.app"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.uniquesikhbabynames.app"
+    },
+    "cordova-plugin-x-socialsharing": {
+      "PACKAGE_NAME": "com.uniquesikhbabynames.app"
+    },
+    "ionic-plugin-keyboard": {
+      "PACKAGE_NAME": "com.uniquesikhbabynames.app"
+    },
+    "cordova-plugin-googleplus": {
+      "PACKAGE_NAME": "com.uniquesikhbabynames.app"
+    },
+    "cordova-plugin-facebook4": {
+      "APP_ID": "118733138820962",
+      "APP_NAME": "Unique Sikh Baby Names",
+      "PACKAGE_NAME": "com.uniquesikhbabynames.app"
+    }
+  },
+  "dependent_plugins": {
+    "cordova-plugin-dialogs": {
+      "PACKAGE_NAME": "com.uniquesikhbabynames.app"
+    },
+    "cordova-plugin-globalization": {
+      "PACKAGE_NAME": "com.uniquesikhbabynames.app"
+    },
+    "es6-promise-plugin": {
+      "PACKAGE_NAME": "com.uniquesikhbabynames.app"
+    }
+  }
+}

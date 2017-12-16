@@ -1,0 +1,115 @@
+<html lang = "en">
+   <head>
+     <script src="https://code.jquery.com/jquery-1.10.1.min.js"></script>   
+   </head>
+
+                  
+                              <body>
+                              <!-- <form id="form" action='https://test.payu.in/merchant/postservice.php?form=2' method='post'>
+                                    <input type="hidden" name="key" value="J0rC5a" id="key"/>
+                                    <input type="hidden" name="command" id="command" value="verify_payment" />
+                                    <input type="hidden" name="var1" id="var1" value="jk4545" />
+                                    <input type="hidden" name="amount" id="amount" value="100.00" />
+                                    <input type="text" name="salt" value="J5OrgpgB" />
+                                    <input type="text" name="hash" id="hash" value = "" />
+                                    <input id="submit_btn" type="submit" value="Pay">
+                              </form> -->
+
+
+                              <form id="form" action='https://test.payu.in/_payment' method='post' name="inputform">
+                                    <input placeholder="first name:" type="hidden" name="firstname" id="firstname" value="Vikas Kumar" />
+                                    <br />
+                                     <input placeholder="key:" type="hidden" name="key" id="key" value="J0rC5a" />
+                                    <br />
+                                    <input placeholder="hash:" type="hidden" id="hash" name="hash" /><br />
+                                     <input placeholder="txnid:" type="hidden" name="txnid" id="txnid" value="PLS-10061-4" />
+                                    <br />
+                                     <input placeholder="productinfo:" type="hidden" name="productinfo" id="productinfo" value="SAUAdmission14" />
+                                    <br />
+                                     <input placeholder="amount:" type="hidden" name="amount" id="amount" value="600.000" />
+                                    <br />
+                                     
+                                    <input type="hidden" name="surl" id="surl" value="" />
+                                    <input type="hidden" name="phone" id="phone" value="9836025289" />
+                                    <input type="hidden" placeholder="email:" name="email" id="email" value="vikasfdsfsdumarsre@gmail.com" />
+                                    <br />
+                                    salt: <input type="hidden" name="salt" id="salt" value="J5OrgpgB" />
+
+                                    <input type="hidden" id="udf1" name="udf1">
+
+                                    <input type="hidden" id="udf2" name="udf2">
+                                    <input type="hidden" id="udf3" name="udf3">
+                                    <input type="hidden" id="udf4" name="udf4">
+
+                                    <input type="submit" />
+                              </form>
+     
+
+                              <div id="sha"></div>
+                              </body>
+                              
+      <script src="sha512.min.js"></script>
+      <script>
+        function getParameterByName(name, url) 
+        {
+          if (!url) url = window.location.href;
+          name = name.replace(/[\[\]]/g, "\\$&");
+          var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+          results = regex.exec(url);
+          if (!results) return null;
+          if (!results[2]) return '';
+          return decodeURIComponent(results[2].replace(/\+/g, " "));
+        }
+          ;(function($, window, document, undefined) {
+            window.method = null;
+            $(document).ready(function() {
+              var plan_available = getParameterByName("plan_available");
+              var alphabet = getParameterByName("alphabet");
+              var gender = getParameterByName("gender");
+              var plan_str = getParameterByName("plan");
+              var plan_part = plan_str.split("#");
+              var plan_id = plan_part[1];
+              var plan_amount = plan_part[0];
+              var productinfo = plan_part[2];
+                var key = $("#key").val();
+                var txnid = "USBN-txn-"+Math.floor(Math.random() * 2222222222);
+                $("#txnid").val(txnid);
+                var amount = plan_amount;
+                $("#amount").val(plan_amount);
+                $("#productinfo").val(productinfo);
+                var firstname = localStorage.fname;
+                $("#firstname").val(firstname);
+                var email = localStorage.email;
+                $("#email").val(email);
+                var user_cre = "";
+                var udf1 = plan_available;
+                var udf2 = alphabet;
+                var udf3 = gender;
+                var udf4 = localStorage.userId;
+                var udf5 = "";
+                var var1 = $("#var1").val();
+                var salt = $("#salt").val();
+                $("#udf1").val(udf1);
+                $("#udf2").val(udf2);
+                $("#udf3").val(udf3);
+                $("#udf4").val(udf4);
+                $("#surl").val("http://vps137395.vps.ovh.ca/baby3/payment.php?txnid="+txnid);
+                //var command = $("#command").val();
+                var sha_str = key+"|"+txnid+"|"+amount+"|"+productinfo+"|"+firstname+"|"+email+"|"+udf1+"|"+udf2+"|"+udf3+"|"+udf4+"|"+udf5+"||||||"+salt;
+                //var sha_str = key+"|"+salt+"|"+txnid+"|"+amount+"|"+productinfo+"|"+firstname+"|"+email+"|"+user_cre+"|"+udf1+"|"+udf2+"|"+udf3+"|"+udf4+"|"+udf5+"||||||"+additional_charges;
+                //var sha_str2 = key+"|"+command+"|"+var1+"|"+salt;
+                $("#hash").val(method(sha_str));
+                $("#sha").html(sha_str);
+                $("#form").submit();
+                
+                
+                //sha512(key|txnid|amount|productinfo|firstname|email|udf1|udf2|udf3|udf4|udf5||||||salt|additional_charges)
+                //sha512(key|command|var1|salt)
+                
+  });
+})(jQuery, window, document);
+          </script>
+      <script>method = sha512;</script>
+      </div>
+   </body>
+</html>

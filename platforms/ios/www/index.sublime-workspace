@@ -1,0 +1,798 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"padd",
+				"padding-top"
+			],
+			[
+				"ba",
+				"background-color"
+			],
+			[
+				"bor",
+				"border"
+			],
+			[
+				"mar",
+				"margin-right"
+			],
+			[
+				"border",
+				"border"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"text",
+				"text-indent"
+			],
+			[
+				"fnt",
+				"font-size"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"sec",
+				"section\tTag"
+			],
+			[
+				"paddin",
+				"padding-left"
+			],
+			[
+				"tex",
+				"text-decoration"
+			],
+			[
+				"min",
+				"min-width"
+			],
+			[
+				"tag",
+				"tag-drop-down"
+			],
+			[
+				"margi",
+				"margin-top"
+			],
+			[
+				"MA",
+				"margin-bottom"
+			],
+			[
+				"marg",
+				"margin-top"
+			],
+			[
+				"sha",
+				"shape-outside"
+			],
+			[
+				"pa",
+				"padding"
+			],
+			[
+				"MAR",
+				"margin-top"
+			],
+			[
+				"border-to",
+				"border-bottom"
+			],
+			[
+				"backgr",
+				"background-color"
+			],
+			[
+				"bo",
+				"border"
+			],
+			[
+				"list",
+				"list-style-type"
+			],
+			[
+				"ta",
+				"table-cell"
+			],
+			[
+				"ali",
+				"align-items"
+			],
+			[
+				"ext",
+				"text-align"
+			],
+			[
+				"border-col",
+				"border-color"
+			],
+			[
+				"bord",
+				"border-radius"
+			],
+			[
+				"border-co",
+				"border-color"
+			],
+			[
+				"ce",
+				"cellspacing\tAttr"
+			],
+			[
+				"he",
+				"head\tTag"
+			],
+			[
+				"h",
+				"head\tTag"
+			],
+			[
+				"fon",
+				"font-size"
+			],
+			[
+				"font-",
+				"font-family"
+			],
+			[
+				"p",
+				"padding"
+			],
+			[
+				"in",
+				"inline-block"
+			],
+			[
+				"bac",
+				"background-color"
+			],
+			[
+				"for",
+				"form\tTag"
+			],
+			[
+				"margin",
+				"margin"
+			],
+			[
+				"c",
+				"class\tAttr"
+			],
+			[
+				"se",
+				"section\tTag"
+			],
+			[
+				"txt",
+				"text-decoration"
+			],
+			[
+				"t",
+				"table-cell"
+			],
+			[
+				"te",
+				"text-decoration"
+			],
+			[
+				"box-s",
+				"box-shadow"
+			],
+			[
+				"tr",
+				"transition"
+			],
+			[
+				"ma",
+				"margin-right"
+			],
+			[
+				"co",
+				"color"
+			],
+			[
+				"di",
+				"div\tTag"
+			],
+			[
+				"box",
+				"box-shadow"
+			],
+			[
+				"f",
+				"float"
+			],
+			[
+				"fo",
+				"font-size"
+			],
+			[
+				"rb",
+				"rgba()"
+			],
+			[
+				"im",
+				"important"
+			],
+			[
+				"re",
+				"repeat"
+			],
+			[
+				"i",
+				"img\tTag"
+			],
+			[
+				"tran",
+				"transform"
+			],
+			[
+				"padding",
+				"padding"
+			],
+			[
+				"m",
+				"margin"
+			],
+			[
+				"s",
+				"src\tAttr"
+			],
+			[
+				"border-top",
+				"border-top"
+			],
+			[
+				"fl",
+				"float"
+			],
+			[
+				"col",
+				"color"
+			],
+			[
+				"u",
+				"uppercase"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"do",
+				"document"
+			],
+			[
+				"lis",
+				"list-style-type"
+			],
+			[
+				"b",
+				"background"
+			],
+			[
+				"cl",
+				"clear"
+			],
+			[
+				"hea",
+				"header\tTag"
+			],
+			[
+				"rgb",
+				"rgba()"
+			],
+			[
+				"paddi",
+				"padding"
+			],
+			[
+				"font-si",
+				"font-size-adjust"
+			],
+			[
+				"ea",
+				"ease-in-out"
+			],
+			[
+				"font-w",
+				"font-weight"
+			],
+			[
+				"rep",
+				"no-repeat"
+			],
+			[
+				"fot",
+				"font-size"
+			],
+			[
+				"paddint",
+				"padding-left"
+			],
+			[
+				"max-",
+				"max-width"
+			],
+			[
+				"v",
+				"vertical-align"
+			],
+			[
+				"ca",
+				"colspan\tAttr"
+			],
+			[
+				"li",
+				"line-height"
+			],
+			[
+				"ti",
+				"title\tTag"
+			],
+			[
+				"sr",
+				"script\tTag"
+			],
+			[
+				"le",
+				"left"
+			],
+			[
+				"max",
+				"max-width"
+			],
+			[
+				"l",
+				"link\tTag"
+			],
+			[
+				"th",
+				"thead\tTag"
+			],
+			[
+				"backgro",
+				"background-size"
+			],
+			[
+				"n",
+				"n_ban_1"
+			],
+			[
+				"border-r",
+				"border-radius"
+			],
+			[
+				"d",
+				"decimal"
+			],
+			[
+				"so",
+				"solid"
+			],
+			[
+				"font-s",
+				"font-size"
+			],
+			[
+				"st",
+				"style\tTag"
+			],
+			[
+				"op",
+				"option\tTag"
+			],
+			[
+				"or",
+				"order"
+			],
+			[
+				"fle",
+				"flex-flow"
+			],
+			[
+				"onc",
+				"onclick\tAttr"
+			],
+			[
+				"logo",
+				"logo_bg"
+			],
+			[
+				"wi",
+				"width"
+			],
+			[
+				"ac",
+				"action\tAttr"
+			],
+			[
+				"no",
+				"no-repeat"
+			],
+			[
+				"al",
+				"alt\tAttr"
+			],
+			[
+				"rg",
+				"rgba()"
+			],
+			[
+				"a",
+				"auto"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "templates/home.html",
+			"settings":
+			{
+				"buffer_size": 1030,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "css/style.css",
+			"settings":
+			{
+				"buffer_size": 12820,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"//192.168.200.12/BabyName/www/templates/goAddFree.html",
+		"/C/Users/designer1/Desktop/hi.html",
+		"//192.168.200.12/BabyName/hooks/after_prepare/010_add_platform_class.js",
+		"//192.168.200.4/v50/wp-content/themes/vivaro/index.php",
+		"//192.168.200.4/v50/wp-content/themes/vivaro/archive.php",
+		"//192.168.200.4/v50/wp-content/themes/vivaro/banking.php",
+		"//192.168.200.4/v50/wp-content/themes/vivaro/contact.php",
+		"//192.168.200.4/v50/wp-content/themes/vivaro/deposite.php",
+		"//192.168.200.4/v50/wp-content/themes/vivaro/game.php",
+		"//192.168.200.4/v50/wp-content/themes/vivaro/header.php",
+		"//192.168.200.4/v50/wp-content/themes/vivaro/login.php",
+		"//192.168.200.4/v50/wp-content/themes/vivaro/mygame.php",
+		"//192.168.200.4/v50/wp-content/themes/vivaro/profile.php",
+		"//192.168.200.4/v50/wp-content/themes/vivaro/promotion.php",
+		"//192.168.200.4/v50/wp-content/themes/vivaro/signup.php",
+		"//192.168.200.4/v50/wp-content/themes/vivaro/status.php",
+		"//192.168.200.4/v50/wp-content/themes/vivaro/term.php",
+		"//192.168.200.4/v50/wp-content/themes/vivaro/transfer.php",
+		"//192.168.200.4/v50/wp-content/themes/vivaro/withdaw.php",
+		"//192.168.200.4/v50/wp-content/themes/vivaro/power.php",
+		"//192.168.200.12/BabyName/www/templates/gender.html",
+		"//192.168.200.12/BabyName/www/lib/ionic/css/ionic.css",
+		"//192.168.200.4/v50/wp-content/themes/vivaro/css/style.css",
+		"//192.168.200.7/safepestadmin/app/views/Pest/pest-layout.blade.php",
+		"/C/Users/designer1/Desktop/screen.css",
+		"//192.168.200.4/v50/wp-content/themes/vivaro/css/style1.css",
+		"//192.168.200.4/v50/wp-content/themes/vivaro/footer.php",
+		"//192.168.200.4/v50/wp-content/themes/vivaro/css/responsive.css",
+		"//192.168.200.4/v50/wp-content/themes/vivaro/html/form.html",
+		"//192.168.200.4/v50/wp-content/themes/vivaro/signup.html",
+		"/E/Pritimay/drive-download-20170913T070826Z-001/vivaro/game.html",
+		"/E/Pritimay/drive-download-20170913T070826Z-001/psd/status.txt",
+		"/E/Pritimay/drive-download-20170913T070826Z-001/vivaro/index.html",
+		"//192.168.200.4/travel/wp-content/themes/html/single-critix.php",
+		"//192.168.200.4/travel/wp-content/themes/html/single-forum.php",
+		"//192.168.200.4/travel/wp-content/themes/html/cretix-search.php",
+		"//192.168.200.4/travel/wp-content/themes/html/css/style.css",
+		"/E/Pritimay/drive-download-20170913T070826Z-001/vivaro/signup.html",
+		"//192.168.200.4/travel/wp-content/themes/html/all-tag.php",
+		"//192.168.200.4/travel/wp-content/themes/html/single-forum - Copy.php",
+		"//192.168.200.4/travel/wp-content/themes/html/tag-id.php",
+		"//192.168.200.8/ottovan/index.php",
+		"//192.168.200.8/ottovan/blog/wp-content/themes/writers/footer.php",
+		"//192.168.200.8/ottovan/footer.php",
+		"//192.168.200.12/BabyName/www/templates/byalphabet.html",
+		"//192.168.200.8/ottovan/css/screen.css",
+		"//192.168.200.4/travel/wp-content/themes/html/temp.inc/marge-question.php",
+		"/E/Pritimay/Critix Email Template/email-template.html",
+		"//192.168.200.8/ottovan/rent-2-buy.php",
+		"//192.168.200.4/lnbera/downloader/mage.php",
+		"//192.168.200.4/travel/wp-content/themes/html/header.php",
+		"//192.168.200.4/travel/wp-content/themes/html/header-home.php",
+		"//192.168.200.4/travel/wp-content/themes/html/bbpress/form-user-login.php",
+		"//192.168.200.4/travel/wp-content/themes/html/bbpress/form-user-lost-pass.php",
+		"//192.168.200.4/travel/wp-content/themes/html/subscription.php",
+		"//192.168.200.4/Projects/travel/wp-content/themes/html/css/style.css",
+		"//192.168.200.4/travel/wp-content/themes/html/rail.php",
+		"//SUSHANTA-MS/travel/wp-content/themes/html/rail.php",
+		"//192.168.200.4/travel/wp-content/themes/html/index.php",
+		"//192.168.200.4/travel/wp-content/themes/html/bbpress/form-forum.php",
+		"//192.168.200.4/travel/wp-content/index.php",
+		"/C/Users/designer1/Downloads/Azd325-sublime-text-caniuse-v1.1.1-1-g7da53dd/Azd325-sublime-text-caniuse-7da53dd/README.md",
+		"//192.168.200.4/Projects/travel/wp-content/themes/html/disclaimer.php",
+		"//192.168.200.4/travel/wp-content/themes/html/delete.php",
+		"//192.168.200.4/travel/wp-content/themes/html/contact.php",
+		"/E/clean project/index.html",
+		"//192.168.200.4/travel/wp-content/themes/html/about.php",
+		"/E/Pritimay/Travel Project (Pritimay)/critix-answer.html",
+		"//192.168.200.4/travel/wp-content/themes/html/archive.php",
+		"//192.168.200.4/Projects/travel/wp-content/themes/html/contact.php",
+		"//192.168.200.4/Projects/travel/wp-content/themes/html/about.php",
+		"//192.168.200.4/Projects/travel/wp-content/themes/html/faq.php",
+		"//192.168.200.4/Projects/travel/wp-content/themes/html/footer.php",
+		"//192.168.200.4/Projects/travel/wp-content/themes/html/single-critix.php",
+		"//192.168.200.4/Projects/travel/wp-content/themes/html/index.php",
+		"//192.168.200.4/Projects/travel/wp-content/themes/html/travel-scarch.php",
+		"//192.168.200.4/Projects/travel/wp-content/themes/html/header.php",
+		"//192.168.200.4/Projects/travel/wp-content/themes/html/travel.php",
+		"//192.168.200.4/Projects/travel/wp-content/themes/html/header-home.php",
+		"//192.168.200.8/ottovan/our-van.php",
+		"//192.168.200.8/ottovan/our-vans.php",
+		"//192.168.200.8/ottovan/van-details-kangoo.php",
+		"//192.168.200.4/travel/wp-content/themes/html/profile-setting.php",
+		"//192.168.200.4/Projects/travel/wp-content/themes/html/single-forum.php",
+		"//192.168.200.4/Projects/travel/wp-content/themes/html/cretix-search.php",
+		"//192.168.200.4/Projects/travel/wp-content/themes/html/bbpress-forums2/functions.php",
+		"//192.168.200.4/Projects/travel/wp-content/themes/html/bbpress/form-forum.php",
+		"/E/Travel Project (Pritimay)/reporting-abuse.html",
+		"//192.168.200.4/Projects/travel/wp-content/themes/html/abc.php",
+		"/E/Pritimay/otto car fix/index.html",
+		"//192.168.200.9/operationhub/resources/views/documents/pdfView.blade.php",
+		"//192.168.200.4/Projects/travel/index.php",
+		"//192.168.200.4/Projects/travel/wp-content/themes/html/bbpress/loop-single-reply.php",
+		"//192.168.200.4/Projects/travel/wp-content/themes/html/bbpress/loop-replies.php",
+		"//192.168.200.4/Projects/html/store-finder.html",
+		"/C/Users/designer1/Desktop/otto car fix/index.html",
+		"/E/Travel Project (Pritimay)/reporting-abuse - Copy.html",
+		"/E/Travel Project (Pritimay)/demo model.html",
+		"//192.168.200.4/Projects/travel/wp-content/themes/html/html/critix-deal.html",
+		"/E/Travel Project (Pritimay)/search.html",
+		"/E/Travel Project (Pritimay)/index.html",
+		"//192.168.200.4/Projects/travel/wp-content/themes/html/bbpress/form-topic.php",
+		"//192.168.200.4/Projects/travel/wp-content/themes/html/mycontent.php",
+		"//192.168.200.4/Projects/travel/wp-content/themes/html/subscription.php",
+		"/G/html/reporting-abuse.html",
+		"/G/html/css/style.css",
+		"//192.168.200.4/Projects/travel/wp-content/index.php",
+		"/G/html/css/paritoh-style.css",
+		"/G/html/critix-answer.html",
+		"/G/html/index.html",
+		"/G/html/critix-search-results.html",
+		"/G/html/search.html",
+		"/G/html/subscription.html",
+		"/G/html/my-profile-details.html",
+		"/G/html/my-profile-det_2.html",
+		"/G/html/my-profile-det_1s.html",
+		"/G/html/profile-settings.html",
+		"/G/html/my-profile-rajesh.html",
+		"/G/html/my-profile-rajesh",
+		"/C/Users/designer1/Desktop/radio",
+		"/C/Users/designer1/Desktop/new/html/css/style.css",
+		"/C/Users/designer1/Desktop/new/html/new.html",
+		"/C/Users/designer1/Desktop/new/html/index.html",
+		"/C/xampp/htdocs/website/application/config/user_agents.php",
+		"/C/xampp/htdocs/website/application/config/authorize_net.php",
+		"/C/xampp/htdocs/website/application/config/autoload.php",
+		"/C/xampp/htdocs/website/application/.htaccess",
+		"/C/xampp/htdocs/website/application/.buildpath"
+	],
+	"find":
+	{
+		"height": 42.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": false,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": false
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "templates/home.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1030,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								37,
+								37
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "css/style.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 12820,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								12818,
+								12818
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 16053.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 28.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "index.sublime-project",
+	"replace":
+	{
+		"height": 52.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 93.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

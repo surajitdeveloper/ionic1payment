@@ -1,0 +1,26 @@
+<ion-view >
+  <ion-content class="favourite-page royal-bg padding">
+    <h3 class="text-center title mono bablog_text">Go Ad Free</h3>
+    <p class="energized mono medium-font text-center text-justify about-uni-st buyp-txt">Text yellow in color and font monotype corsiva. Highlight key words with blue color.</p>
+    <div class="list">
+      <label class="item item-input item-select">
+          <div class="input-label ">
+            <span class="energized mono buyp-txt custext-add">Select Payment Option</span>
+          </div>
+          <select  class="pref-op">
+            <option selected>--select--</option>
+             <option ng-repeat="add in freeAdds" ng-model="add.goAdd" value="{{add.value}}">{{add.name}}</option>
+          </select>
+        </label>
+        </div>
+
+
+    <div class="row">
+      <div class="col  text-center">
+      <button class="button button-font button-block bablog_btn cus-btn-login btn-spcr">
+        Pay Now
+      </button>
+    </div>
+  </div>
+  </ion-content>
+</ion-view>

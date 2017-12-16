@@ -1,0 +1,18 @@
+<ion-view >
+  <ion-content class="royal-bg home-page">
+    <div class="padding text-center">
+      <img class="logo-image" src="img/baby images/smilebaby.png" />
+    </div>
+    <div class="list energized item-icon-right" ng-repeat="name in students">
+      <div class="item energized custom-list">
+        {{name.name}}
+      </div>
+    </div>
+    <h4  ng-if="!err">{{msg}}</h4>
+    <div class="row" ng-if="err">
+      <div class="col text-center">
+        <button class="button icon-left ion-android-share-alt" ng-click="shareName()">Share</button>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

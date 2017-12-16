@@ -1,0 +1,45 @@
+<ion-view view-title="SignUp" hide-nav-bar="true" can-swipe-back="false" cache-view="false">
+  <ion-content class="royal-bg login-page padding">
+    <div class="padding text-center">
+      <h1 class="baby_name">
+        Baby Name App
+      </h1>
+    </div>
+    <div class="padding text-center">
+      <h2 class="bablog_text">Reset Password</h2>
+    </div>
+    <form ng-submit="doforgot()">
+      <div class="list bablog_box">
+        <label class="item item-input">
+          <span class="input-label energized">Password</span>
+          <input type="password" ng-model="loginData.password">
+        </label>
+        <label class="item item-input">
+          <span class="input-label energized">Re-Enter Password</span>
+          <input type="password" ng-model="loginData.password">
+        </label>
+      </div>
+
+      <div class="row">
+        <div class="col text-center">
+          <button class="button button-outline button-dark button-outline button-font bablog_btn" type="submit">Submit</button>
+        </div>
+      </div>
+       <div class="row">
+        <div class="col text-center">
+          <a class=" babreset" href="#/login">Back To Login Page</a>
+        </div>
+      </div>
+      <!--<div class="row">
+        <div class="col text-center">
+          <button class="button icon-left ion-social-facebook button-clear button-positive" >Facebook</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col text-center">
+          <button class="button icon-left ion-social-google button-clear button-assertive" >Google</button>
+        </div>
+      </div> -->
+    </form>
+  </ion-content>
+</ion-view>

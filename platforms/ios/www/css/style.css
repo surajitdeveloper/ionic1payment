@@ -1,0 +1,854 @@
+/* Empty. Add your own CSS if you like */
+/*FontdinerdotcomLuvable*/
+@font-face {
+    font-family: 'Garamond';
+    src: url('font/hinted-Garamond.eot');
+    src: local('font/Garamond'),
+        url('font/hinted-Garamond.eot?#iefix') format('embedded-opentype'),
+        url('font/hinted-Garamond.woff') format('woff'),
+        url('font/hinted-Garamond.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+.relinktxt
+{
+  font-family: "Monotype Corsiva"!important;
+}
+.newfon-size
+{
+  font-size: 38px !important;
+}
+.newfont
+{
+  font-family: "Monotype Corsiva"!important;
+  font-size: 18px !important;
+  text-align: justify !important;
+}
+.newfont h4,h2,h3 {
+  font-family: "Monotype Corsiva"!important;
+  text-align: center;
+  font-size: 24px;
+  color: blue !important;
+}
+.newfont p
+{
+   font-family: "Monotype Corsiva"!important;
+   text-align: left;
+}
+
+.scrollh
+{
+  overflow: hidden;
+}
+.pref-op option
+{
+  background-color: #fff;
+}
+.scroll{
+  width: 100%;
+  float: left;
+  /*background-color: #000;*/
+}
+.back-icon{
+  padding-top: 15px;
+}
+.show
+{
+  display: block !important;
+}
+.mid-icon{
+  font-size: 12px!important;
+  color: black;
+  padding-left: 10px;
+}
+.home-float{
+  font-style:normal !important;
+  font-family: arial !important;
+  font-size: 12px;
+  padding-top: 30px;
+  padding: 4px;
+}
+.item-icon-button {
+  background: transparent none repeat scroll 0 0;
+  border: medium none;
+  bottom: 75px;
+  display: inline-block;
+  left: 100px;
+  position: absolute;
+}
+.wrap{
+  font-style:normal !important;
+  font-family: arial !important;
+  }
+.ion-ios-search{
+  padding-top: 6px;
+}
+.xyz{
+  font-size: 14px !important;
+  color: red;
+}
+
+#hm-f{
+  font-style:normal !important;
+ font-family: 'Garamond'!important;
+}
+.mono{
+
+  font-size: 25px !important;
+}
+.monoplan{
+  font-size: 16px !important;
+}
+html, body{
+  height: 100%;
+}
+.plan-page .overflow-scroll .scroll{
+  position: absolute!important;
+}
+.larger{
+  font-size: x-large!important;
+}
+.plan-page .price .col{
+  text-align: center!important;
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 68px;
+  -moz-box-flex: 0;
+  -moz-flex: 0 0 68px;
+  -ms-flex: 0 0 68px;
+  flex: 0 0 68px;
+  max-width: 68px;
+}
+.price{
+  background-color: #826886 !important;
+  font-size: 18px!important;
+}
+.col-60 {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 60%;
+    -moz-box-flex: 0;
+    -moz-flex: 0 0 60%;
+    -ms-flex: 0 0 60%;
+    flex: 0 0 60%;
+    max-width: 60%;
+}
+.plan-page{
+  color: black;
+  font-family: "Monotype Corsiva"!important;
+}
+.box1{
+  text-align: center;
+  margin-top: 40%; /* by surajit */ 
+  background: transparent;
+}
+.box-bg-trans
+{
+	background-color: #fff !important;
+}
+.slidebox{
+  width: 80%;
+  margin-left: 10%;
+  height: 80%;
+  margin-top: 10%;
+}
+.center{
+    left: 0;
+    line-height: 200px;
+    margin-top: -100px;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    width: 100%;
+}
+
+body,h1,h2,h3,h4,h5,h6, input, .item, p{
+  font-family: "Luvable";
+}
+body{
+  color: #ffff00;
+}
+.button-text{
+  font-size: 22px;
+  font-weight: bold;
+}
+.name-list-b {
+  color:  #11c1f3 !important;
+  display: inline-block;
+  text-align: center;
+  margin: auto;
+}
+.name-list-g{
+  color: #ff2da3 !important;
+  display: inline-block;
+  text-align: center;
+  margin: auto;
+}
+.name-list-a{
+  color: #a743f4 !important;
+  display: inline-block;
+  text-align: center;
+  margin: auto;
+}
+.girl-name{
+  background-color: rgba(234, 174, 249, 0.68);
+}
+.boy-name{
+  background-color: rgba(17, 193, 243, 0.4);
+}
+.common-page .list{
+  margin-bottom: 5px!important;
+}
+.common-page .item{
+  border-color: transparent!important;
+  background-color: transparent!important;
+  color: #ffff00!important;
+  text-align: center!important;
+}
+.menu-item .item-content, .menu-item{
+  border-color: #b7b6b6!important;
+  background-color: #c1bcbc!important;
+  color: #444!important;
+  font-size: 18px;
+}
+.title{
+  font-size: 20px;
+}
+.mono, .button{
+  font-family: "Monotype Corsiva"!important;
+}
+
+.medium-font{
+  font-size: 18px;
+}
+.button-font{
+  font-size: 22px;
+  font-weight: bolder;
+}
+.preferences-page .input-label{
+  color: yellow!important;
+  background : transparent!important;
+  border: 0px!important;
+  font-size: 18px!important;
+}
+.home-page .item{
+  font-size: 24px!important;
+}
+.larger-icon{
+  font-size: 48px!important;
+}
+.login-page .item, .home-page .item, .favourite-page .item, .preferences-page .item{
+  background : transparent!important;
+  border: 0px!important;
+}
+.login-page textarea, input[type="text"], input[type="password"], input[type="datetime"],
+input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"],
+input[type="week"], input[type="number"], input[type="email"], input[type="url"],
+input[type="search"], input[type="tel"], input[type="color"]{
+  border: 1px solid;
+}
+.fav-name{
+  font-size: 20px;
+  font-family: "Luvable";
+}
+.fav-mean{
+  font-size: 18px!important;
+  font-family: "Luvable";
+  color: #ffff00!important;
+}
+.pink{
+  color: #ed2b94;
+}
+/*.pink1{
+  background-color: #BD87DC!important;
+  border-top: 3px dotted #000;
+    padding-top: 10px;
+}*/
+input.border-z{
+  border: 0;
+}
+.item-input {
+  padding: 6px!important;
+}
+/*.seach-select textarea, input[type="text"], input[type="password"], input[type="datetime"],
+input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"],
+input[type="week"], input[type="number"], input[type="email"], input[type="url"],
+input[type="search"], input[type="tel"], input[type="color"]{
+  border: 0px;
+}*/
+.header-bg-img{
+  /*background-image: url(../img/image1.jpg);*/
+  background-color: #ffa9d2;
+  padding-bottom: 20px;
+  height:200px;
+  /*background-image:  url(../img/image1.jpg) no-repeat center;*/
+}
+.profile-pic{
+  height: 100px;
+  width: 100px;
+  border-radius: 50px;
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(204,14,0,1);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(204,14,0,1);
+  box-shadow: 0px 0px 5px 2px rgba(204,14,0,1);
+}
+.custom-footer{
+  height: 65px!important;
+}
+.custom-footer h4{
+  font-style: italic;
+  font-size: 20px;
+  font-family: arial!important;
+}
+.home-page .item-icon-left{
+  padding-left: 85px!important;
+}
+.list-icon-img{
+  padding: 6px;
+}
+.by-alpha-page .row .col-33 img{
+  width: 75%;
+}
+.logo-image{
+  width: 40%;
+}
+.gender-image{
+  width: 70%;
+}
+.category-image{
+  width: 75%;
+}
+/*.category-all{
+  width: 100%;
+}*/
+.right_margin{
+  margin-right: 20px!important;
+}
+.italic{
+  font-style: italic;
+}
+/*.nameList{
+  background: url('../img/we.jpg') no-repeat;
+  background-size: cover;
+}*/
+
+.baby_name{
+  color: #fff;
+  font-size: 24px;
+  font-weight: bolder;
+  font-style:normal !important;
+  font-family: arial !important;
+}
+.bablog_box{
+  margin-bottom: 0;
+}
+.bablog_box span{
+  width: 35%;
+  font-family: "Monotype Corsiva" !important;
+  font-size: 1.1em;
+}
+.bablog_box input{
+  background-color: #fff;
+  border: 3px solid #000;
+  height: 46px;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding-right: 0;
+  text-indent: 15px;
+  width: 50%;
+}
+.bablog_text{
+  font-size: 30px;
+  color: #00ff00 !important;
+}
+.babreset{
+  color: #000099;
+  font-family: "Monotype Corsiva" !important;
+  font-size: 18px;
+
+}
+
+.babreset a{
+  color: #000099;
+}
+.button.button-dark.button-outline.bablog_btn{
+  border: 3px solid #000;
+  color: #ffff00;
+  border-radius: 2px;
+  font-family: "Monotype Corsiva" !important;
+  padding-left: 30px;
+  padding-right: 30px;
+  font-size: 24px;
+}
+.dark_text{
+  color: #000;
+  font-family: "Monotype Corsiva" !important;
+  font-size: 20px;
+
+}
+.babsignup{
+  color: #000099;
+  font-size: 20px;
+}
+.babsignup a{
+  color: #000099;
+}
+.list a.item-content{
+  color: #740b86!important;
+}
+/*.by_alpha .col-33 img{
+  border-radius: 5px;
+  border: 2px dashed #2a2a2a;
+}*/
+.gen_left{
+  float: left;
+  width: 70%;
+}
+.gen_right{
+  float: left;
+  width: 30%;
+  margin-top: 20%;
+}
+.gen_text{
+  font-family: "JennasFeet";
+  font-size: 50px;
+  color: #ffff00!important;
+}
+.cate_tit .title{
+  color: #ffff00;
+}
+.mt20{
+  margin-top: 20px !important;
+}
+.mt40{
+  margin-top: 40px !important;
+}
+.mt60{
+  margin-top: 60px !important;
+}
+.mt80{
+  margin-top: 80px !important;
+}
+
+.item-input-wrapper{
+  /*border: 3px solid #000;*/
+  height: 40px;
+  border-radius: 2px;
+  border: 1px solid #000;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.show-card-details-container h2{
+    font-family: "Monotype Corsiva";
+
+}
+.inputbname > i
+{
+  color: #000 !important;
+}
+.fav-name{
+
+    color: #ffff00;
+}
+
+.item-select select{
+  width: 45%;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+.gender-page a{
+  text-decoration: none;
+}
+.gender-page .boy-text a{color: blue!important;}
+.gender-page .girl-text a{color: #d60938!important;}
+.gender-page .all-text a{color: #ffff00!important;}
+
+.highlight-text{
+  color: blue;
+}
+.item-icon-left
+{
+	color:yellow;
+}
+.c-dualbby
+{
+	width:100% !important;
+}
+.gender-image
+{
+	width:60% !important;
+}
+
+.category-image
+{
+  width: 45% !important;
+}
+.category-all
+{
+  width: 99% !important;
+  margin-right: 25px !important;
+  height: 95% !important;
+}
+.title
+{
+  display: block !important;
+}
+.nameListb{
+  background: url(../img/nmb.jpg);
+  position:absolute;
+  top:20px;
+  left:0;
+  right:0;
+  bottom:0;
+  background-size:cover;
+  background-position: center;
+  background-repeat:  no-repeat; width:100%;
+  height:95%;
+  margin-top: 15px;
+}
+.nameListg{
+  background: url(../img/nmg.jpg);
+  position:absolute;
+  top:20px;
+  left:0;
+  right:0;
+  bottom:0;
+  background-size:cover;
+  background-position: center;
+  background-repeat:  no-repeat; width:100%;
+  height:95%;
+  margin-top: 15px;
+}
+.nameLista{
+  background: url(../img/nma.png);
+  position:absolute;
+  top:20px;
+  left:0;
+  right:0;
+  bottom:0;
+  background-size:cover;
+  background-position: center;
+  background-repeat:  no-repeat; width:100%;
+  height:95%;
+  margin-top: 15px;
+}
+.custom-login > input::placeholder{
+  font-family: arial;
+  color: #95979b;
+  text-indent: 20px;
+}
+.babreset{
+  text-align: center !important;
+  font-size: 18px !important;
+}
+.custom-login > input{
+  border:2px solid #4f5256 !important;
+  font-style:normal !important;
+  font-family: arial !important;
+  width: 50% !important;
+}
+.cus-btn-login{
+  background-color: #45289F !important;
+  border: 1px solid #45289F !important;
+    color: #fff !important;
+     width: 100% !important;
+}
+.cus-btn-fb{
+  background-color: #3B5998 !important;
+  border: 1px solid #3B5998 !important;
+    color: #fff !important;
+    width: 200px;
+}
+.cus-btn-goo{
+  background-color: #E34007 !important;
+  border: 1px solid #E34007 !important;
+  color: #fff !important;
+  width: 200px;
+}
+.bbbtn
+{
+  background-color: #624CC8 !important;
+  color: #fff !important;
+  border-radius: 0px !important;
+  width: 90% !important;
+  display: block !important;
+  cursor: pointer !important;
+  margin: 0 auto !important;
+}
+
+.clear-login
+{
+  padding-top: 20px;
+}
+
+.bottom-b
+{
+  border-bottom: 1px solid #280000 !important;
+}
+
+.boy-text
+{
+  font-family: cutie_pie-webfont !important;
+  font-size: 52px;
+}
+.girl-text
+{
+   font-family: "LoveLetters";
+   font-size: 52px;
+}
+.all-text
+{
+  font-family: "NebuloDemo";
+  font-size: 52px;
+}
+.pref-op{
+	border-radius: 8px !important;
+	height: 45px;
+}
+.about-uni-st
+{
+	text-align: center !important;
+	margin: auto !important;
+	vertical-align:middle;
+	font-size: 18px;
+}
+.buyp-txt
+{
+	font-size: 24px !important;
+}
+.com-b-txt
+{
+	font-size: 28px !important;
+}
+.com-s-txt
+{
+	font-size: 20px !important;
+}
+.contact-info
+{
+	font-size: 22px !important;
+}
+.com-m-d > input
+{
+  background-color: #fff;
+}
+.custom-login::placeholder
+{
+  color: gray;
+  font-family: arial;
+  text-indent: 10px;
+}
+.c-m-d-btn
+{
+  padding: 10px;
+}
+.c-m-d-btn > i
+{
+  color: #fff;
+  margin-top:20px !important;
+  border-radius: 0px !important;
+}
+.sea-mam img{
+  width: 38%;
+}
+.sea_foot{
+  height: 80px !important;
+}
+.custom-list
+{
+  font-size: 60px;
+}
+.custom_heart {
+  font-size: 60px;
+  display: table;
+/*  margin: auto auto auto 16px;
+*/}
+.nlistshow
+{
+    position: absolute;
+    bottom: -882%;
+    left: 5%;
+}
+.extra-con
+{
+  font-size: 22px !important;
+  height: 45px;
+  font-weight: bold !important;
+}
+.relog
+{
+  color:#740b86!important;
+  font-size: 20px !important;
+}
+.login-in
+{
+  width: 75% !important;
+}
+.inputbname > i
+{
+  color: #000;
+  font-size: 24px !important;
+}
+
+
+
+.overflow-scroll .scroll
+{
+  position: initial;
+}
+.name-list-pajnabi
+{
+ /*   padding-bottom: 30px !important;
+    margin-bottom: 30px !important;*/
+    position: relative;
+   /* top: -77px;*/
+}
+.etc{
+    background-color: transparent;
+   /* height: 300px;
+    position: absolute;
+    right: 124px;*/
+    align-content: center;
+    display: table;
+    margin:  0 auto;
+    width: 50%;
+}
+
+
+.etc h2{
+  clear: both;
+  display: block;
+}
+.planModel > .row > .col 
+{
+  font-size: 14px !important;
+  color: #000;
+}
+.royal-bg,.home-page,.royal-bg-new,.scroll-content,.ionic-scroll,.overflow-scroll,.has-header
+{
+  background-color: #C896E6 !important;
+}
+.sfont
+{
+  font-size: 24px;
+  font-family: none !important;
+}
+.bar.bar-royal
+{
+  background-color: #9637cf;
+}
+.custext-add
+{
+  font-size: 20px !important;
+}
+.custom-footer h4
+{
+  color: #fff !important;
+}
+.exit-text 
+{
+  color: #000;
+  font-family: none !important;
+}
+.item-complex .item-content, .item-radio .item-content
+{
+  font-family: none !important;
+}
+.inputbname, .border-z,.ng-pristine,.ng-untouched,.ng-valid,.ng-empty
+{
+  font-family: none !important;
+}
+.loading-container,.loading
+{
+  font-family: none !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+}
+.smallf
+{
+  font-size: 17px !important;
+  font-family: none !important;
+}
+.hh-sec
+{
+ /* margin: 0 auto;
+  display: table;
+  height: 50px;*/
+  position: absolute;
+  width: 50%;
+  left: 25%;
+  bottom: 16%;
+  text-align: center;
+}
+
+.item_heart{
+  position: initial;
+  float: left;
+  padding: 0;
+  padding-right: 20px; 
+}
+
+.icon11{
+  float: left;
+  margin-top: 10px;
+}
+
+@media only screen and (min-width: 768px) {
+
+.nameListb{
+  background: url(../img/nmb-tab.jpg);
+  position:absolute;
+  top:20px;
+  left:0;
+  right:0;
+  bottom:0;
+  background-size:cover;
+  background-position: center;
+  background-repeat:  no-repeat; width:100%;
+  height:125%;
+  margin-top: 10px;
+}
+.nameListg{
+  background: url(../img/nmg-tab.jpg);
+  position:absolute;
+  top:20px;
+  left:0;
+  right:0;
+  bottom:0;
+  background-size:cover;
+  background-position: center;
+  background-repeat:  no-repeat; width:100%;
+  height:125%;
+  margin-top: 10px;
+}
+.nameLista{
+  background: url(../img/nma-tab.jpg);
+  position:absolute;
+  top:20px;
+  left:0;
+  right:0;
+  bottom:0;
+  background-size:cover;
+  background-position: center;
+  background-repeat:  no-repeat; width:100%;
+  height:125%;
+  margin-top: 15px;
+}
+.inputbname input
+{
+  border: 1px solid #000;
+  background-color: #fff;
+  text-indent: 20px;
+  margin-left: 5px !important;
+  margin-right: 5px !important;
+}
+
+.gap
+{
+  padding-left:  20px !important;
+}
+.overflow-scroll
+{
+  overflow-x: scroll !important;
+  width: 200px !important;
+  background-color: red !important;
+  height: 400px !important;
+  
+}
