@@ -6,7 +6,7 @@
 // 'starter.controllers' is found in controllers.js
 angular.module('starter', ['ionic', 'starter.controllers','starter.services', 'star-rating', "ionic.contrib.ui.tinderCards",'ionic-toast', 'ngCordova'])
 
-.run(function($ionicPlatform, DB, $rootScope, $ionicPopup, $state, $location, $filter, $locale, $ionicActionSheet, $cordovaGeolocation) {
+.run(function($interval, $ionicPlatform, DB, $rootScope, $ionicPopup, $state, $location, $filter, $locale, $ionicActionSheet, $cordovaGeolocation) {
   $rootScope.baseUrl = 'http://vps137395.vps.ovh.ca/baby3/public/app';
   // $rootScope.originList = {};
   // $rootScope.meaningList = {};
@@ -26,18 +26,23 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.services', 's
     ////////////////////////////////////////////////////////
     localStorage.lat = 22;
     localStorage.lng = 88;
-    var posOptions = {timeout: 10000, enableHighAccuracy: true};
-    $cordovaGeolocation
-    .watchPosition(posOptions)
-    .then(function (position) {
-      var lat  = position.coords.latitude;
-      var lng = position.coords.longitude;
-      localStorage.lat = lat;
-      localStorage.lng = lng;
-      console.log('Lat : '+lat+', lng : '+lng);
-    }, function(err) {
-      console.log(err);
-    });
+
+    $interval( function(){ 
+
+
+      var posOptions = {timeout: 10000, enableHighAccuracy: true};
+      $cordovaGeolocation
+      .watchPosition(posOptions)
+      .then(function (position) {
+        var lat  = position.coords.latitude;
+        var lng = position.coords.longitude;
+        localStorage.lat = lat;
+        localStorage.lng = lng;
+        console.log('Lat : '+lat+', lng : '+lng);
+      }, function(err) {
+        console.log(err);
+      });
+     }, 60000);
 
     /////////////////////////////////////////////////////////////
     $rootScope.isLoggedIn = false;
